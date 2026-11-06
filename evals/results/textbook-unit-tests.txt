@@ -1,0 +1,27 @@
+test_chapter_traversal_missing_file_and_invalid_metadata (test_book.BookTests.test_chapter_traversal_missing_file_and_invalid_metadata) ... ok
+test_compile_timeout_has_explicit_limits (test_book.BookTests.test_compile_timeout_has_explicit_limits) ... ok
+test_cross_chapter_same_named_headers_and_local_links (test_book.BookTests.test_cross_chapter_same_named_headers_and_local_links) ... ok
+test_duplicate_chapter_id_or_path_rejected (test_book.BookTests.test_duplicate_chapter_id_or_path_rejected) ... ok
+test_missing_anchor_rejected_instead_of_silent_broken_pdf_link (test_book.BookTests.test_missing_anchor_rejected_instead_of_silent_broken_pdf_link) ... ok
+test_no_arbitrary_chapter_cap_and_manifest_order_preserved (test_book.BookTests.test_no_arbitrary_chapter_cap_and_manifest_order_preserved) ... ok
+test_parser_failure_preserves_diagnostic (test_book.BookTests.test_parser_failure_preserves_diagnostic) ... ok
+test_relative_image_resolves_against_chapter_not_cwd (test_book.BookTests.test_relative_image_resolves_against_chapter_not_cwd) ... ok
+test_remote_image_not_fetched_at_compile_time (test_book.BookTests.test_remote_image_not_fetched_at_compile_time) ... ok
+test_check_only_creates_nothing (test_build_pdf.BuildTests.test_check_only_creates_nothing) ... ok
+test_compiler_uses_workspace_temp_without_changing_process_env (test_build_pdf.BuildTests.test_compiler_uses_workspace_temp_without_changing_process_env) ... ok
+test_concurrent_output_edit_is_preserved (test_build_pdf.BuildTests.test_concurrent_output_edit_is_preserved) ... ok
+test_existing_pdf_requires_explicit_replace (test_build_pdf.BuildTests.test_existing_pdf_requires_explicit_replace) ... ok
+test_failed_compilation_preserves_previous_pdf (test_build_pdf.BuildTests.test_failed_compilation_preserves_previous_pdf) ... ok
+test_input_edit_during_build_prevents_stale_publish (test_build_pdf.BuildTests.test_input_edit_during_build_prevents_stale_publish) ... ok
+test_invalid_input_never_invokes_compiler (test_build_pdf.BuildTests.test_invalid_input_never_invokes_compiler) ... ok
+test_missing_executable_fails_explicitly (test_build_pdf.BuildTests.test_missing_executable_fails_explicitly) ... ok
+test_missing_glyph_does_not_publish (test_build_pdf.BuildTests.test_missing_glyph_does_not_publish) ... ok
+test_multiple_inputs_keep_requested_order (test_build_pdf.BuildTests.test_multiple_inputs_keep_requested_order) ... ok
+test_output_symlink_cannot_escape_root (test_build_pdf.BuildTests.test_output_symlink_cannot_escape_root) ... skipped 'OS does not allow test symlinks'
+test_path_traversal_absolute_and_protected_paths_rejected (test_build_pdf.BuildTests.test_path_traversal_absolute_and_protected_paths_rejected) ... ok
+test_success_preserves_markdown_and_keeps_qa_unverified (test_build_pdf.BuildTests.test_success_preserves_markdown_and_keeps_qa_unverified) ... ok
+
+----------------------------------------------------------------------
+Ran 22 tests in 0.537s
+
+OK (skipped=1)

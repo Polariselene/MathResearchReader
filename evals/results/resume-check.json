@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "old_source_sha256": "3b2515b05f8d64171ade8595ec2b4876174f5c3e496a36cc3f5b6c3602cb1915",
+  "new_source_sha256": "ac9bc193090b293b3b94981338efedf31d9026d584f4854abe922c3a02c8a495",
+  "invalidated": [
+    "L",
+    "T"
+  ],
+  "user_edit_preserved": true,
+  "status": "pass",
+  "scope": "manual minimal state exercise, no packaged resume engine"
+}

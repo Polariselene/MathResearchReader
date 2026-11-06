@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06T11:07:53.8559548Z",
+  "readme_sha256": "ebec6411cc3829bacbd5bf5fdd8be36fd0d8c8c308343be043caaf148e72945b",
+  "fixture": ".local-test/readme-verification-7153c4e2",
+  "scope": "README command blocks executed in an isolated project; no real user skill installation or Codex discovery test",
+  "dependency_note": "Existing Pandoc directory added to this process PATH; Python and TeX were already available; no installation performed",
+  "commands": [
+    {
+      "kind": "project-install",
+      "command": "$skillSource = (Resolve-Path -LiteralPath '.\\skills\\math-research-reader').Path\n$skillTarget = Join-Path (Get-Location).Path '.agents\\skills\\math-research-reader'\nif (Test-Path -LiteralPath $skillTarget) {\n    throw '目标已存在，请先检查版本和本地修改，不要直接覆盖。'\n}\nNew-Item -ItemType Directory -Path (Split-Path -Parent $skillTarget) -Force | Out-Null\nCopy-Item -LiteralPath $skillSource -Destination $skillTarget -Recurse -ErrorAction Stop\nTest-Path -LiteralPath (Join-Path $skillTarget 'SKILL.md')\n",
+      "files_hash_verified": 24,
+      "existing_target_rejected": true,
+      "status": "pass"
+    },
+    {
+      "kind": "diagnose-and-input",
+      "command": "$paperRoot = (Resolve-Path -LiteralPath '.\\.local-test\\readme-demo').Path\npython .\\skills\\math-research-reader\\scripts\\build_pdf.py --root $paperRoot --check\npython .\\skills\\math-research-reader\\scripts\\build_pdf.py --root $paperRoot --input report.md --output exports/report.zh-CN.pdf\n",
+      "exit_code": 0,
+      "status": "pass"
+    },
+    {
+      "kind": "book",
+      "command": "python .\\skills\\math-research-reader\\scripts\\build_pdf.py --root $paperRoot --book book.json --output exports/book.zh-CN.pdf\n",
+      "exit_code": 0,
+      "status": "pass"
+    }
+  ],
+  "existing_pdf_rejected_and_unchanged": true,
+  "manifests": [
+    ".local-test/readme-verification-7153c4e2/.local-test/readme-demo/build/pdf-5oiv5dlj/manifest.json",
+    ".local-test/readme-verification-7153c4e2/.local-test/readme-demo/build/pdf-k4b7zlqm/manifest.json"
+  ],
+  "official_quick_validate": "Skill is valid!",
+  "unit_command": "python -m unittest discover -s tests -v",
+  "unit_result": "Already executed in project root this turn: 22 run, 21 passed, 1 skipped (symlink privilege)",
+  "pdf_visual_qa": "pass: both one-page PDFs rendered and actually viewed",
+  "pdf_checks": [
+    {
+      "pdf": ".local-test\\readme-verification-7153c4e2\\.local-test\\readme-demo\\exports\\book.zh-CN.pdf",
+      "sha256": "e57725791c823330f25be5f23aea3964478843e5a41ae1ce4fbe772798f5a5e4",
+      "inspected_pages": [
+        1
+      ],
+      "render_sha256": "b4717a2653978ff7cb3e78ad339808cbdf82289dbcd9862161ddb04dcff88178"
+    },
+    {
+      "pdf": ".local-test\\readme-verification-7153c4e2\\.local-test\\readme-demo\\exports\\report.zh-CN.pdf",
+      "sha256": "ab1ecfa430180ecc6ff563053d0f8ebdddbf554ed910294092b31d11de0bd28f",
+      "inspected_pages": [
+        1
+      ],
+      "render_sha256": "a86915c5c8fda9735397c2e2a22bf7cc592fc4d477f42473a2e7849427f7deee"
+    }
+  ],
+  "readme_local_links_checked": 8,
+  "official_reference": "https://learn.chatgpt.com/docs/build-skills",
+  "validation_report_sha256": "71c521f0b9771b639c24f170bb59fbe53783c8cb2958e180b511355209af9b93",
+  "record_scope_note": "Historical checks refer to their recorded input versions. Release sanitization changes some documentation and license notices; do not reuse old pass states for new file bytes. Current publication checks are in release-checks.json."
+}

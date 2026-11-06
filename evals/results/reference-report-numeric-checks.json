@@ -1,0 +1,86 @@
+{
+  "scope": "five self-authored local teaching cases; same-context checks",
+  "cases": {
+    "A": {
+      "status": "pass",
+      "q": [
+        -2,
+        1,
+        0
+      ],
+      "nonzero_minor": -1,
+      "third_row_redundant": true
+    },
+    "B": {
+      "status": "pass",
+      "a": 0.6484375,
+      "h": 0.00390625,
+      "observed_error": 0.0015625,
+      "target_error": 0.0484375,
+      "trace": [
+        [
+          "1/2",
+          "1/2"
+        ],
+        [
+          "1/2",
+          "1/4"
+        ],
+        [
+          "5/8",
+          "1/8"
+        ],
+        [
+          "5/8",
+          "1/16"
+        ],
+        [
+          "5/8",
+          "1/32"
+        ],
+        [
+          "41/64",
+          "1/64"
+        ],
+        [
+          "83/128",
+          "1/128"
+        ],
+        [
+          "83/128",
+          "1/256"
+        ]
+      ]
+    },
+    "C": {
+      "status": "pass",
+      "values": [
+        {
+          "gap": 1.0,
+          "eta": 1e-08,
+          "sin_angle": 1e-08,
+          "bound": 2e-08
+        },
+        {
+          "gap": 1e-08,
+          "eta": 1e-08,
+          "sin_angle": 0.7071067811865476,
+          "bound": 2.0
+        }
+      ]
+    },
+    "D": {
+      "status": "pass",
+      "covariance": "-1",
+      "variance_sum": "0",
+      "expectation_ratio": "2/3",
+      "ratio_expectations": "1/2"
+    },
+    "E": {
+      "status": "pass",
+      "max_complex_identity_residual": 0.0,
+      "dag_depth": 4,
+      "work": 6
+    }
+  }
+}

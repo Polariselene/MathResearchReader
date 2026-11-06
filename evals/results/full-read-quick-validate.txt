@@ -1,0 +1,8 @@
+Date: 2026-11-06
+Command: python -X utf8 <official skill-creator>/scripts/quick_validate.py skills/math-research-reader
+Exit code: 0
+Output:
+Skill is valid!
+
+Scope: Skill package structural validation after the three proof/experiment/profile rule updates.
+This does not certify mathematical correctness or replace the full-read artifact quality records.

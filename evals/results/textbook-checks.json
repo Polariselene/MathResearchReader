@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-06",
+  "status": "pass",
+  "requirements_selection_covered": 75,
+  "upstream_files_or_sections_read": 39,
+  "main_skill_lines": 94,
+  "runtime_scripts": 1,
+  "unit_tests": {
+    "total": 22,
+    "pass": 21,
+    "skipped": 1
+  },
+  "integration": {
+    "chapter_files": 3,
+    "pdf_pages": 5,
+    "internal_links_checked": 6,
+    "unique_anchor_ids": 15,
+    "source_and_builder_hashes_checked": true
+  },
+  "visual_qa": {
+    "pages_inspected": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "final_render_matches_inspected_pages": true,
+    "status": "pass",
+    "desktop_link_clicking": "unverified"
+  },
+  "pdf_sha256": "8f01df0eead9de99024de4d0bb3c7c916ac8d482e837b58b3cd945fc763176ae",
+  "checked_documents": [
+    "skills\\math-research-reader\\SKILL.md",
+    "skills\\math-research-reader\\references\\deep-read.md",
+    "skills\\math-research-reader\\references\\design-provenance.md",
+    "skills\\math-research-reader\\references\\evidence.md",
+    "skills\\math-research-reader\\references\\knowledge-base.md",
+    "skills\\math-research-reader\\references\\lean.md",
+    "skills\\math-research-reader\\references\\literature.md",
+    "skills\\math-research-reader\\references\\mathematics.md",
+    "skills\\math-research-reader\\references\\pdf.md",
+    "skills\\math-research-reader\\references\\proof-audit.md",
+    "skills\\math-research-reader\\references\\proof-obligations.md",
+    "skills\\math-research-reader\\references\\quality.md",
+    "skills\\math-research-reader\\references\\source-reading.md",
+    "skills\\math-research-reader\\references\\synthesis.md",
+    "skills\\math-research-reader\\references\\textbook.md",
+    "skills\\math-research-reader\\references\\visualization.md",
+    "skills\\math-research-reader\\references\\profiles\\applied-security.md",
+    "skills\\math-research-reader\\references\\profiles\\empirical-cs-ai.md",
+    "skills\\math-research-reader\\references\\profiles\\pure-math.md",
+    "README.md",
+    "docs\\upstream-review\\product-fit.md",
+    "docs\\upstream-review\\README.md",
+    "evals\\results\\textbook-validation.md"
+  ],
+  "no_git_directory": true,
+  "limits": [
+    "No real-paper hundred-page end-to-end run",
+    "No independent teaching-effectiveness evaluation",
+    "121-chapter test uses mocked AST, not 121-page PDF"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "status": "built",
+  "visual_qa": "unverified",
+  "inputs": [
+    {
+      "path": "report.md",
+      "sha256": "1ca3544f1e84153075bf69b09e31e4c37bb4bec17d765c729760e264d91ea2fc"
+    }
+  ],
+  "header_sha256": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+  "tools": {
+    "pandoc": "${PROJECT_ROOT}/.venv/Lib/site-packages/pypandoc/files/pandoc.exe",
+    "xelatex": "${TEXLIVE_ROOT}/bin/windows/xelatex.exe",
+    "ctex": "${TEXLIVE_ROOT}/texmf-dist/tex/latex/ctex/ctexart.cls",
+    "versions": {
+      "pandoc": "pandoc 3.9",
+      "xelatex": "XeTeX 3.141592653-2.6-0.999998 (TeX Live 2026)"
+    }
+  },
+  "command": [
+    "${PROJECT_ROOT}/.venv/Lib/site-packages/pypandoc/files/pandoc.exe",
+    "${PROJECT_ROOT}/.local-test/applied/report.md",
+    "--from=markdown+tex_math_dollars+link_attributes",
+    "--standalone",
+    "--table-of-contents",
+    "--number-sections",
+    "--pdf-engine=${TEXLIVE_ROOT}/bin/windows/xelatex.exe",
+    "--pdf-engine-opt=-no-shell-escape",
+    "--include-in-header=${PROJECT_ROOT}/skills/math-research-reader/assets/pdf-header.tex",
+    "-V",
+    "documentclass=ctexart",
+    "-V",
+    "classoption=fontset=fandol",
+    "-V",
+    "papersize=a4",
+    "-V",
+    "fontsize=11pt",
+    "-V",
+    "geometry:margin=23mm",
+    "--resource-path=${PROJECT_ROOT}/.local-test/applied",
+    "--output=${PROJECT_ROOT}/.local-test/applied/build/pdf-yhyi5j1s/report.pdf"
+  ],
+  "output": "exports\\report.zh-CN.pdf",
+  "exit_code": 0,
+  "output_sha256": "73ebec97c322996d3167236eec2bf4882ee1194e10d5b4a0944a92e66ca2f431",
+  "public_representation": {
+    "kind": "sanitized-historical-record",
+    "commands_executable": false,
+    "original_preserved_locally": true,
+    "redacted": "machine-specific paths replaced with symbolic roots",
+    "scope": "Original build result and output hashes retained; not a new build or visual review."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "title": "白化的教科书式精读：局部开发样例",
+  "author": "MathResearchReader",
+  "date": "2026-11-06",
+  "lang": "zh-CN",
+  "chapters": [
+    {"id": "guide", "file": "guide.md"},
+    {"id": "preparation", "file": "chapters/preparation.md"},
+    {"id": "whitening", "file": "chapters/whitening.md"}
+  ]
+}

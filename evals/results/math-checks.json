@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "crypto_permutations": 40320,
+  "single_cipher_counts": [
+    5040,
+    5040,
+    5040,
+    5040,
+    5040,
+    5040,
+    5040,
+    5040
+  ],
+  "same_plaintext_equal_cipher_probability": "1",
+  "distinct_plaintext_equal_cipher_probability": "0",
+  "whitening_positive_diagonal": [
+    "1",
+    "1"
+  ],
+  "singular_pseudoinverse_diagonal": [
+    "1",
+    "0"
+  ],
+  "attention_example_output": "5",
+  "status": "pass",
+  "limit": "Finite checks supplement the mathematical arguments; not full-paper proof verification."
+}

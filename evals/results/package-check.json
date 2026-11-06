@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "status": "pass",
+  "checks": [
+    "UTF-8 text without replacement characters",
+    "all Skill Markdown file links present and package-local",
+    "UI name, short description, invocation and policy",
+    "standalone copied package official validator passed",
+    "MIT license included in standalone package",
+    "single runtime script",
+    "no .git directory"
+  ],
+  "main_skill_lines": 85,
+  "runtime_scripts": 1,
+  "errors": []
+}

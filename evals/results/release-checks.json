@@ -1,0 +1,518 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06T11:51:24.219167+00:00",
+  "status": "pass-for-listed-publication-candidate",
+  "scope": "Filesystem candidate only; no Git/index/staging/remote operations or checks",
+  "secrets_or_private_markers_found": 0,
+  "actual_absolute_paths_found": 0,
+  "candidate_files": 91,
+  "candidate_bytes_excluding_self": 684686,
+  "manually_confirmed_math_non_paths": 1,
+  "markdown_local_targets_checked": 140,
+  "ignore_case_tests": 26,
+  "ignore_validation": "independent matcher; not git check-ignore",
+  "official_quick_validate": "Skill is valid!",
+  "git_metadata_found": true,
+  "git_operations_executed": false,
+  "git_operations_scope": "This filesystem checker invokes no Git commands; repository initialization or staging is a separate operation.",
+  "readme_executable_blocks_unchanged": 4,
+  "runtime_script_unchanged": true,
+  "old_math_visual_and_behavior_checks_reused_as_new": false,
+  "third_party_scope": "THIRD_PARTY.md; unlicensed/unknown/private source material excluded, not relicensed",
+  "pdf_checks": [
+    {
+      "path": "evals/fixtures/textbook-book/figures/whitening.pdf",
+      "sha256": "fb3ba1bc4746bb09c6b038b8d269052d678b77a281f73f8543870a8eabe32be1",
+      "pages": 1,
+      "text_metadata_and_file_links_checked": true,
+      "font_rights_scope": "THIRD_PARTY.md; embedded fonts retain separate licenses",
+      "new_visual_review": false
+    },
+    {
+      "path": "evals/results/applied-math.pdf",
+      "sha256": "73ebec97c322996d3167236eec2bf4882ee1194e10d5b4a0944a92e66ca2f431",
+      "pages": 3,
+      "text_metadata_and_file_links_checked": true,
+      "font_rights_scope": "THIRD_PARTY.md; embedded fonts retain separate licenses",
+      "new_visual_review": false
+    },
+    {
+      "path": "evals/results/figures/whitening.pdf",
+      "sha256": "fb3ba1bc4746bb09c6b038b8d269052d678b77a281f73f8543870a8eabe32be1",
+      "pages": 1,
+      "text_metadata_and_file_links_checked": true,
+      "font_rights_scope": "THIRD_PARTY.md; embedded fonts retain separate licenses",
+      "new_visual_review": false
+    },
+    {
+      "path": "evals/results/textbook-sample.pdf",
+      "sha256": "8f01df0eead9de99024de4d0bb3c7c916ac8d482e837b58b3cd945fc763176ae",
+      "pages": 5,
+      "text_metadata_and_file_links_checked": true,
+      "font_rights_scope": "THIRD_PARTY.md; embedded fonts retain separate licenses",
+      "new_visual_review": false
+    }
+  ],
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "6ecf7fdee10c58567cb4453414b9e4a6a2d7edc2deac06f5a14dcfa18cd82a95",
+      "bytes": 477
+    },
+    {
+      "path": "docs/design/01-product-and-workflows.md",
+      "sha256": "59cd72c4f2195bb8007723b3cd4034fa6a0005fa44d7233575177e827196e08c",
+      "bytes": 17585
+    },
+    {
+      "path": "docs/design/02-architecture-and-codex.md",
+      "sha256": "b1181b696bc074dd86ab16106f5364cf9924941c406a4129d8ac5193104fee18",
+      "bytes": 19783
+    },
+    {
+      "path": "docs/design/03-requirements-traceability.md",
+      "sha256": "8232a4b3ffb86ff98319f401ebcf751295db1c17883dfb57280ffcae4c05598b",
+      "bytes": 10804
+    },
+    {
+      "path": "docs/design/04-sources-and-decisions.md",
+      "sha256": "35df8b80f78cadcf05150772d7cf6a6210dd3092ad7bc6e350ce53146e01f771",
+      "bytes": 6981
+    },
+    {
+      "path": "docs/design/05-teaching-feedback.md",
+      "sha256": "a36a8045dcd748ecef54accef224c9e9366311a4fa670a3078a1842c2f9d4bfa",
+      "bytes": 3293
+    },
+    {
+      "path": "docs/design/README.md",
+      "sha256": "a7eaa03955f38ce715999bca3d2b20a65251c66e4177a933ba1287d0b285ca6b",
+      "bytes": 1968
+    },
+    {
+      "path": "docs/design/source-notes.txt",
+      "sha256": "09b2c7fc795a9ed1c79e3662ddd5212f1f31a7ee7b765f1c59ba99d769979ca5",
+      "bytes": 498
+    },
+    {
+      "path": "docs/reference-report-review.md",
+      "sha256": "d92f0aba4791942906b8bb6d9dc0a270de77a991acc3bf66320954937f58948b",
+      "bytes": 3058
+    },
+    {
+      "path": "docs/release-readiness.md",
+      "sha256": "fc2c2bdaf8427fea54b943e17e5fd428eca128162cf2a27bc195979d531fc496",
+      "bytes": 3837
+    },
+    {
+      "path": "docs/upstream-review/product-fit.md",
+      "sha256": "fa06f996bd83ef543b0e509dca8496adc45eccc319050a75e9cb9f7bc40cc0d9",
+      "bytes": 8644
+    },
+    {
+      "path": "docs/upstream-review/product-source-manifest.json",
+      "sha256": "530dcaf828dbfb3ef83001259a38f5a0b4071bd4c0ec8a7c1db2927fa222ae5f",
+      "bytes": 9870
+    },
+    {
+      "path": "docs/upstream-review/README.md",
+      "sha256": "54b1ebbc5622c364ee06e69bc62dbba37add40fabb0a076e7e772597760bba65",
+      "bytes": 8252
+    },
+    {
+      "path": "docs/upstream-review/requirements-coverage.json",
+      "sha256": "727655771c401976658b83b2a656f973661875f5b42ed22849f9e0e8e0475d2d",
+      "bytes": 7484
+    },
+    {
+      "path": "docs/upstream-review/source-manifest.json",
+      "sha256": "dc986ea7b3c801f9da879df64738492c4b0b0d0ebd7d97429d6fcd58cafac22d",
+      "bytes": 12384
+    },
+    {
+      "path": "evals/cases.md",
+      "sha256": "ce5d6b0b9a7f616e3ab0919248a614606e1e58517acf1918966816672d813582",
+      "bytes": 2652
+    },
+    {
+      "path": "evals/fixtures/edge-cases.md",
+      "sha256": "beec539a975f15b436d86dfb7382b2e1a07c287e4e981ed18e98456ac7150743",
+      "bytes": 1023
+    },
+    {
+      "path": "evals/fixtures/textbook-book/book.json",
+      "sha256": "725347f2940d4aa5bfb7735444f7538ed449e3e46e846e7fb1d05c45f1b50ddd",
+      "bytes": 347
+    },
+    {
+      "path": "evals/fixtures/textbook-book/chapters/preparation.md",
+      "sha256": "66ad81d2728a632409d1160a7070e360815a5d7876a2ca54e199f0703764c607",
+      "bytes": 2554
+    },
+    {
+      "path": "evals/fixtures/textbook-book/chapters/whitening.md",
+      "sha256": "7b9041b77a4a204dd9dcd1b54c87e7c3be831396af321b6abf2c4a5a0f25cf52",
+      "bytes": 3653
+    },
+    {
+      "path": "evals/fixtures/textbook-book/figures/whitening.pdf",
+      "sha256": "fb3ba1bc4746bb09c6b038b8d269052d678b77a281f73f8543870a8eabe32be1",
+      "bytes": 6936
+    },
+    {
+      "path": "evals/fixtures/textbook-book/guide.md",
+      "sha256": "2c7f1ee8f61c72f39f176193e156d187a1a3ef18e1df9c354605dcff4c12d6bf",
+      "bytes": 1078
+    },
+    {
+      "path": "evals/fixtures/upstream-mechanisms.md",
+      "sha256": "2d3344eddfc71c304c0602cc8ab85e289d830081a76542b29843a9cbb946fe3d",
+      "bytes": 1710
+    },
+    {
+      "path": "evals/fixtures/upstream-mechanisms.tex",
+      "sha256": "dd6f98379755f14b040ab13c110ea9b9eafc8c7291fe4385b88c8fd6584e147e",
+      "bytes": 999
+    },
+    {
+      "path": "evals/fixtures/whitening.tex",
+      "sha256": "1dedac607daa450f86806df9c9ab59e999285938aa3657444b7fe916fa626e03",
+      "bytes": 540
+    },
+    {
+      "path": "evals/results/applied-math.md",
+      "sha256": "1ca3544f1e84153075bf69b09e31e4c37bb4bec17d765c729760e264d91ea2fc",
+      "bytes": 3673
+    },
+    {
+      "path": "evals/results/applied-math.pdf",
+      "sha256": "73ebec97c322996d3167236eec2bf4882ee1194e10d5b4a0944a92e66ca2f431",
+      "bytes": 137968
+    },
+    {
+      "path": "evals/results/cryptography.md",
+      "sha256": "e947f447614d41004b5723d7c02b06144000148e57a676c6504bb380ab185bc4",
+      "bytes": 2172
+    },
+    {
+      "path": "evals/results/edge-cases.md",
+      "sha256": "613eb8900d22fa680a4cf6931af950ab06296fdbfcab186e58add944f68bae85",
+      "bytes": 1182
+    },
+    {
+      "path": "evals/results/empirical-ai.md",
+      "sha256": "fce1b762aeb98549d6d07b2bca2fd7e79b052068852f323373565364e2daf4bd",
+      "bytes": 1828
+    },
+    {
+      "path": "evals/results/figures/whitening.pdf",
+      "sha256": "fb3ba1bc4746bb09c6b038b8d269052d678b77a281f73f8543870a8eabe32be1",
+      "bytes": 6936
+    },
+    {
+      "path": "evals/results/full-read-2609.14379v2.md",
+      "sha256": "6e6b625627ad87f5a34d206f2d0ea099f67f75dc5eb2231b210751035400572c",
+      "bytes": 2104
+    },
+    {
+      "path": "evals/results/full-read-quick-validate.txt",
+      "sha256": "b40f356968d82891d900c72962d878b358be473a28c79009a15db5adb7dd5f93",
+      "bytes": 354
+    },
+    {
+      "path": "evals/results/math-checks.json",
+      "sha256": "112a27949f4d0282a7d44aa0ed07e8e2bb9792a459477d705cda027be9bbfb5b",
+      "bytes": 574
+    },
+    {
+      "path": "evals/results/narrative-quick-validate.txt",
+      "sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4",
+      "bytes": 17
+    },
+    {
+      "path": "evals/results/narrative-teaching-checks.json",
+      "sha256": "dc440e03a6561bc77715f2fbfb1716b90bc17ed66ba604c38d081d076125074f",
+      "bytes": 5155
+    },
+    {
+      "path": "evals/results/narrative-teaching-sample.md",
+      "sha256": "df674baf63e029173d94996833a1b784bc660d2875134ff704d758a658955b60",
+      "bytes": 10841
+    },
+    {
+      "path": "evals/results/narrative-teaching-validation.md",
+      "sha256": "07cc137fad0e536d5fbd67da5f91dde3b97545d74c53ec4bd6444b360dfe9b59",
+      "bytes": 3776
+    },
+    {
+      "path": "evals/results/package-check.json",
+      "sha256": "32bd9068e607fc3e0dff21273a024b3911e3b11b1677b7e9fd78d708087834e3",
+      "bytes": 476
+    },
+    {
+      "path": "evals/results/pdf-build-manifest.json",
+      "sha256": "f7faa381103c399303988280dfb871f74573d9d177a51d4cb2534d7d870698d8",
+      "bytes": 1963
+    },
+    {
+      "path": "evals/results/pdf-qa.json",
+      "sha256": "fce534056fd3bfe0be4b83855b275c478ec491ea145e81a9820a4d9d6d89eef9",
+      "bytes": 857
+    },
+    {
+      "path": "evals/results/pure-math.md",
+      "sha256": "e4641b6a9e3eddd91d84dac021102232ecb276261656afd5cbd04bcf9444a5c4",
+      "bytes": 2219
+    },
+    {
+      "path": "evals/results/quick-validate.txt",
+      "sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4",
+      "bytes": 17
+    },
+    {
+      "path": "evals/results/readme-command-checks.json",
+      "sha256": "f832ee49bff526b752dd829fca53ad16776110b5a4fd9db6dce0ad1e139b9bc2",
+      "bytes": 3663
+    },
+    {
+      "path": "evals/results/readme-validation.md",
+      "sha256": "71c521f0b9771b639c24f170bb59fbe53783c8cb2958e180b511355209af9b93",
+      "bytes": 3443
+    },
+    {
+      "path": "evals/results/reference-report-file-checks.json",
+      "sha256": "523f043c2310beef6e15b7b3b18e35111a91a47cd93c7968b35f9146e8e67bfe",
+      "bytes": 2675
+    },
+    {
+      "path": "evals/results/reference-report-numeric-checks.json",
+      "sha256": "0ba825d264df780f5451cba25bd034822e7b45425b075b2b85cf04c7d9776566",
+      "bytes": 1576
+    },
+    {
+      "path": "evals/results/reference-report-teaching-cases.md",
+      "sha256": "d36504e441a8e473f169b669e59ed667024a8d309d252ead62a45c384b36bd5e",
+      "bytes": 4840
+    },
+    {
+      "path": "evals/results/reference-report-validation.md",
+      "sha256": "a18d697b8e152485566ec54a1e09de0d3f38070ef51e609a9d3084ba845ec341",
+      "bytes": 3862
+    },
+    {
+      "path": "evals/results/resume-check.json",
+      "sha256": "2665fceec4e1d893a9fe9819a72ea2d8124d77239148c8b8a803f087fbaac852",
+      "bytes": 381
+    },
+    {
+      "path": "evals/results/source-manifest.json",
+      "sha256": "b50d4eb37509ba673b19d7af0d9395be7f362b589c4142b66fac6a6f9c423dd6",
+      "bytes": 1279
+    },
+    {
+      "path": "evals/results/textbook-build-manifest.json",
+      "sha256": "9f3107ad1ba3e13142ed50c99b1db44caa07745addf26dbab6baefc806052670",
+      "bytes": 2696
+    },
+    {
+      "path": "evals/results/textbook-checks.json",
+      "sha256": "f5564cbf727d2ec6f4ccef7fb5c26711e8a788f1f7249273fd2964d36d82000b",
+      "bytes": 2420
+    },
+    {
+      "path": "evals/results/textbook-quick-validate.txt",
+      "sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4",
+      "bytes": 17
+    },
+    {
+      "path": "evals/results/textbook-sample.pdf",
+      "sha256": "8f01df0eead9de99024de4d0bb3c7c916ac8d482e837b58b3cd945fc763176ae",
+      "bytes": 189971
+    },
+    {
+      "path": "evals/results/textbook-unit-tests.txt",
+      "sha256": "418736e92ebfcabbab09a6145f3f9783a788bc3db73b4107da4a33d127261398",
+      "bytes": 2993
+    },
+    {
+      "path": "evals/results/textbook-validation.md",
+      "sha256": "f5b3445a04a72067657b1179cc81ab0dd4114d51b252864fe04a966d68430c5d",
+      "bytes": 4210
+    },
+    {
+      "path": "evals/results/unit-tests.txt",
+      "sha256": "a4ab08177535dfae7205ae375adf1560ebeb72a663c27d45d9a8716bcdf522a7",
+      "bytes": 1551
+    },
+    {
+      "path": "evals/results/upstream-quick-validate.txt",
+      "sha256": "6cf9e7f0d34ccd36dbd28f270cd28dd04277b2e1516bd4333ce7bb501d7b18d4",
+      "bytes": 17
+    },
+    {
+      "path": "evals/results/upstream-refinement-checks.json",
+      "sha256": "feaa0ffc64c13f448e41b99a8902891285334c0e08468552576a6c23d77fae09",
+      "bytes": 3469
+    },
+    {
+      "path": "evals/results/upstream-refinement.md",
+      "sha256": "ca9570a03ddd5463d9d441fa0bbe1779f4be7bb3d2c33324161ddc0661721592",
+      "bytes": 2369
+    },
+    {
+      "path": "evals/results/validation.md",
+      "sha256": "a33e71fbb6c0b3de3e9c4d3f1df4dd3d76a2f9db8ab0d382ae4e827ffb1acb7a",
+      "bytes": 4689
+    },
+    {
+      "path": "LICENSE",
+      "sha256": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+      "bytes": 1064
+    },
+    {
+      "path": "README.md",
+      "sha256": "ab43ef0ebba3f7bd164cf535421be80146f9b0fe24dc0e51ba50bfafac213e30",
+      "bytes": 13227
+    },
+    {
+      "path": "skills/math-research-reader/agents/openai.yaml",
+      "sha256": "71b09d1ee65226bf70acfd75b385b7fba1706cda6145b91814e939aa96c8f5fc",
+      "bytes": 512
+    },
+    {
+      "path": "skills/math-research-reader/assets/pdf-header.tex",
+      "sha256": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+      "bytes": 395
+    },
+    {
+      "path": "skills/math-research-reader/LICENSE",
+      "sha256": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+      "bytes": 1064
+    },
+    {
+      "path": "skills/math-research-reader/references/deep-read.md",
+      "sha256": "6aa555633f47cbd50c5e727dce1d35da18c87d6a2d7ef8b20f4bae67a51d9a69",
+      "bytes": 2800
+    },
+    {
+      "path": "skills/math-research-reader/references/design-provenance.md",
+      "sha256": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+      "bytes": 5060
+    },
+    {
+      "path": "skills/math-research-reader/references/evidence.md",
+      "sha256": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+      "bytes": 3333
+    },
+    {
+      "path": "skills/math-research-reader/references/knowledge-base.md",
+      "sha256": "5f655213fe7de778317451da8e6e52e1b2b59cfd101053755512c50182609382",
+      "bytes": 4617
+    },
+    {
+      "path": "skills/math-research-reader/references/lean.md",
+      "sha256": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+      "bytes": 529
+    },
+    {
+      "path": "skills/math-research-reader/references/literature.md",
+      "sha256": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+      "bytes": 3792
+    },
+    {
+      "path": "skills/math-research-reader/references/mathematics.md",
+      "sha256": "922fb646ce597c6a87d076b15a5cd55a90d368ed3f162a55e77fe31717689821",
+      "bytes": 7373
+    },
+    {
+      "path": "skills/math-research-reader/references/pdf.md",
+      "sha256": "8d0650758ff18c8ee745a05b1a44b96e7d3953bba06719b4461fc84a70023bc0",
+      "bytes": 5518
+    },
+    {
+      "path": "skills/math-research-reader/references/profiles/applied-security.md",
+      "sha256": "7afa597385fc075752c1c2cfbc9d8ef568b436df1abe211692a1008b5fcf4f52",
+      "bytes": 2368
+    },
+    {
+      "path": "skills/math-research-reader/references/profiles/empirical-cs-ai.md",
+      "sha256": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+      "bytes": 1015
+    },
+    {
+      "path": "skills/math-research-reader/references/profiles/pure-math.md",
+      "sha256": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+      "bytes": 542
+    },
+    {
+      "path": "skills/math-research-reader/references/proof-audit.md",
+      "sha256": "55dd39fdcec748f18dcc7cf31a361f6d401e03135a4ceded182be4751f8f41d5",
+      "bytes": 5458
+    },
+    {
+      "path": "skills/math-research-reader/references/proof-obligations.md",
+      "sha256": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+      "bytes": 4221
+    },
+    {
+      "path": "skills/math-research-reader/references/quality.md",
+      "sha256": "f53f9e5c5d70a6320ea1fb04f284c077db7a8140543b8f537da4d9ca1a832b12",
+      "bytes": 5565
+    },
+    {
+      "path": "skills/math-research-reader/references/source-reading.md",
+      "sha256": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+      "bytes": 2884
+    },
+    {
+      "path": "skills/math-research-reader/references/synthesis.md",
+      "sha256": "69e8870cc6a789da6e170917c0828ad218a5aa33a5be8418df9132dd37ffa64d",
+      "bytes": 4142
+    },
+    {
+      "path": "skills/math-research-reader/references/textbook.md",
+      "sha256": "52a94cc675700ad872666f42e4db68318b685d0f37607d9879dc1d8101cdf52b",
+      "bytes": 10663
+    },
+    {
+      "path": "skills/math-research-reader/references/visualization.md",
+      "sha256": "ee0cc3d5065221abb5417e15cc5b43980c4582acf3f8b6b3c84b76f108e2a769",
+      "bytes": 2089
+    },
+    {
+      "path": "skills/math-research-reader/scripts/build_pdf.py",
+      "sha256": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+      "bytes": 16007
+    },
+    {
+      "path": "skills/math-research-reader/SKILL.md",
+      "sha256": "e6687d1495d6818332da03eed28e633ee90065d0f408ca07ce4f9fe8e2722c0f",
+      "bytes": 7530
+    },
+    {
+      "path": "tests/test_book.py",
+      "sha256": "5fc25574733feced96b24857f3385a995bf7d6fa517e5e09a5afd862f4873a22",
+      "bytes": 6170
+    },
+    {
+      "path": "tests/test_build_pdf.py",
+      "sha256": "788fccfab7ebe9be7c81ad2459803e31308be43b3c2a7b55d6bbcaefeb9383d9",
+      "bytes": 7453
+    },
+    {
+      "path": "THIRD_PARTY.md",
+      "sha256": "1eddd740c58f5e4f057fc304afe2fd71f5603f14e306979cfd563caaaf4281e2",
+      "bytes": 4652
+    }
+  ],
+  "self_record": {
+    "path": "evals/results/release-checks.json",
+    "sha256": null,
+    "reason": "Self hash omitted to avoid a recursive manifest."
+  },
+  "limits": [
+    "Pattern scan is not proof against unknown secret formats.",
+    "No legal originality certification, remote/history or reader-effect evaluation.",
+    "Recheck after any change or if the publication file set differs."
+  ]
+}

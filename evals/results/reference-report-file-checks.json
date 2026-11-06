@@ -1,0 +1,33 @@
+{
+  "scope": "updated instruction and review files; local targets only",
+  "status": "pass",
+  "utf8_files": 16,
+  "local_link_targets_checked": 60,
+  "pending_target": "this JSON file, created by this check",
+  "all_skill_reference_files_reachable": 18,
+  "runtime_scripts": [
+    "scripts/build_pdf.py"
+  ],
+  "no_private_pdf_in_skill": true,
+  "git_directory_present": false,
+  "unchanged_interface_checked": true,
+  "reviewed_hashes": {
+    "README.md": "372cf7045bf6ae2e967f81acd5a524e54539066ef60edace82e5dfbb41ea5717",
+    "docs/reference-report-review.md": "279d00a7949b69d40fb650857f3c679316fb660197c12a6d451ef3732f0b2996",
+    "evals/cases.md": "4b1fddb9fcd0469b31427d42e8b6860f442049226a8d8e7f9835d3a262078784",
+    "evals/results/reference-report-validation.md": "66a6c633e45a0b5bae1cf1e7cdc972f743ac3a20ea56a6e006c97e4639023827",
+    "evals/results/reference-report-teaching-cases.md": "d36504e441a8e473f169b669e59ed667024a8d309d252ead62a45c384b36bd5e",
+    "evals/results/reference-report-numeric-checks.json": "0ba825d264df780f5451cba25bd034822e7b45425b075b2b85cf04c7d9776566",
+    "skills/math-research-reader/SKILL.md": "f5f9999ac3c20d12182a13a96b132733ebe3fd5e44833d8dab4017e0f750d04d",
+    "skills/math-research-reader/references/evidence.md": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+    "skills/math-research-reader/references/mathematics.md": "d60b68ac295d276a1858f73932254fb76bdd311ced149ac42c49c041469ab4a8",
+    "skills/math-research-reader/references/textbook.md": "e25a997aea849c179e7d099b8854da648fa1508a336f42e4e9a64a1d6609421d",
+    "skills/math-research-reader/references/synthesis.md": "be43899f28df09dd925f44ebbdf764328219fb8e482ffaaba52226ca45d3f19b",
+    "skills/math-research-reader/references/source-reading.md": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+    "skills/math-research-reader/references/profiles/applied-security.md": "d4ea3575a746b15bc888c1eca6342d2399e67f21d349d886ecfe4d1585b87cb0",
+    "skills/math-research-reader/references/quality.md": "c63881c471609d1d9396149ae2417be8189a2bc9cd277d4de4ba290cd08c2055",
+    "skills/math-research-reader/references/knowledge-base.md": "59413ffbe69c1d3d17a3fc0ac0016896b73638a7530d4c2bacfac41e5d8f3625",
+    "skills/math-research-reader/references/design-provenance.md": "ad95c75962b2d25ad6926862e83ca5cb11db0b95147c284119fd65cc2a6774c2"
+  },
+  "record_scope_note": "Historical checks refer to their recorded input versions. Release sanitization changes some documentation and license notices; do not reuse old pass states for new file bytes. Current publication checks are in release-checks.json."
+}

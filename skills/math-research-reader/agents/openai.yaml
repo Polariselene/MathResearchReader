@@ -1,0 +1,6 @@
+interface:
+  display_name: "MathResearchReader"
+  short_description: "数学论文教科书级精读、完整推导与证明审查，支持分章知识库与长篇中文 PDF"
+  default_prompt: "使用 $math-research-reader 对我提供的论文执行完整教科书级精读，按数学依赖由浅入深重组讲解，自然引入变量并展开推导与证明，建立 Markdown 知识库，生成不含阅读导航、练习解答和研究启发的中文 PDF。"
+policy:
+  allow_implicit_invocation: true

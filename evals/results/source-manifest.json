@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "pure-math",
+      "arxiv_version": "2402.03356v3",
+      "url": "https://arxiv.org/pdf/2402.03356v3",
+      "sha256": "c7895dec85c9936e7d1b82c6b470abaaad311b9426e611fe94c84b01b074b46e",
+      "pages": 4,
+      "download_date": "2026-11-06",
+      "redistributed": false
+    },
+    {
+      "id": "applied-math",
+      "arxiv_version": "1512.00809v4",
+      "url": "https://arxiv.org/pdf/1512.00809v4",
+      "sha256": "85801a75edaecac3a5bbf9517941f9062e0a54dd1fb02961626498c419a1a55c",
+      "pages": 14,
+      "download_date": "2026-11-06",
+      "redistributed": false
+    },
+    {
+      "id": "cryptography",
+      "arxiv_version": "2302.07671v1",
+      "url": "https://arxiv.org/pdf/2302.07671v1",
+      "sha256": "f918f1e2083063dd8cc65c69ca00e87406d786a90199ed1eb48e9b4726112768",
+      "pages": 7,
+      "download_date": "2026-11-06",
+      "redistributed": false
+    },
+    {
+      "id": "empirical-ai",
+      "arxiv_version": "1706.03762v7",
+      "url": "https://arxiv.org/pdf/1706.03762v7",
+      "sha256": "bdfaa68d8984f0dc02beaca527b76f207d99b666d31d1da728ee0728182df697",
+      "pages": 15,
+      "download_date": "2026-11-06",
+      "redistributed": false
+    }
+  ]
+}

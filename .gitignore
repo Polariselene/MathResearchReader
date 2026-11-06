@@ -1,0 +1,35 @@
+.venv/
+.local-test/
+__pycache__/
+*.py[cod]
+MathResearchReader-Library/
+*.aux
+*.log
+*.toc
+*.out
+
+# Local credentials; examples must contain placeholders only.
+.env
+.env.*
+!.env.example
+!.env.sample
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local Skill installations and reading state.
+/.agents/skills/math-research-reader/
+**/.mrr/
+/.codex/auth.json
+/.codex/sessions/
+
+# Tool caches and editor/OS temporary files.
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db

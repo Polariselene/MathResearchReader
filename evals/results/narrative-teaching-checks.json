@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "recorded_at": "2026-11-06T10:59:14.432090+00:00",
+  "scope": "Skill instruction update, two local teaching rewrites, and real Pandoc AST assembly",
+  "status": "pass-for-executed-checks",
+  "independent_review": false,
+  "new_full_book_generated": false,
+  "new_pdf_rendered": false,
+  "sample_sha256": "df674baf63e029173d94996833a1b784bc660d2875134ff704d758a658955b60",
+  "builder_sha256": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+  "assembly": {
+    "excluded_material_absent": true,
+    "all_math_nodes_preserved": true,
+    "math_nodes": 136,
+    "manifest_files": [
+      "body.md"
+    ]
+  },
+  "numeric": {
+    "exact_omitted_coordinate_case": {
+      "estimate": "3",
+      "residual": [
+        "8",
+        "-4"
+      ]
+    },
+    "svd_cases": [
+      {
+        "rank": 2,
+        "normal_equation_error": 2.220446049250313e-15,
+        "null_component_error": 0.0
+      },
+      {
+        "rank": 1,
+        "normal_equation_error": 3.1401849173675503e-16,
+        "null_component_error": 0.0
+      },
+      {
+        "rank": 0,
+        "normal_equation_error": 0.0,
+        "null_component_error": 0.0
+      }
+    ],
+    "joint_rank_and_failure_case": "pass",
+    "whitening_error": 1.8927611374901913e-16,
+    "singular_case": "projection-not-identity"
+  },
+  "package": {
+    "official_quick_validate": "Skill is valid!",
+    "relative_file_links_checked": 69,
+    "runtime_scripts": [
+      "scripts/build_pdf.py"
+    ]
+  },
+  "reviewed_hashes": {
+    "skills/math-research-reader/agents/openai.yaml": "71b09d1ee65226bf70acfd75b385b7fba1706cda6145b91814e939aa96c8f5fc",
+    "skills/math-research-reader/assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "skills/math-research-reader/LICENSE": "f151ea5125b4dbb14ed4a44a55b69769f1ab14f0674605f26321e5c46e8205f9",
+    "skills/math-research-reader/references/deep-read.md": "6aa555633f47cbd50c5e727dce1d35da18c87d6a2d7ef8b20f4bae67a51d9a69",
+    "skills/math-research-reader/references/design-provenance.md": "4141c8f2b8d3016df0d4b1f660efe5188dfaf8153d8572509dea3dd5283256fb",
+    "skills/math-research-reader/references/evidence.md": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+    "skills/math-research-reader/references/knowledge-base.md": "5f655213fe7de778317451da8e6e52e1b2b59cfd101053755512c50182609382",
+    "skills/math-research-reader/references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "skills/math-research-reader/references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "skills/math-research-reader/references/mathematics.md": "922fb646ce597c6a87d076b15a5cd55a90d368ed3f162a55e77fe31717689821",
+    "skills/math-research-reader/references/pdf.md": "8d0650758ff18c8ee745a05b1a44b96e7d3953bba06719b4461fc84a70023bc0",
+    "skills/math-research-reader/references/profiles/applied-security.md": "7afa597385fc075752c1c2cfbc9d8ef568b436df1abe211692a1008b5fcf4f52",
+    "skills/math-research-reader/references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "skills/math-research-reader/references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "skills/math-research-reader/references/proof-audit.md": "55dd39fdcec748f18dcc7cf31a361f6d401e03135a4ceded182be4751f8f41d5",
+    "skills/math-research-reader/references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "skills/math-research-reader/references/quality.md": "f53f9e5c5d70a6320ea1fb04f284c077db7a8140543b8f537da4d9ca1a832b12",
+    "skills/math-research-reader/references/source-reading.md": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+    "skills/math-research-reader/references/synthesis.md": "69e8870cc6a789da6e170917c0828ad218a5aa33a5be8418df9132dd37ffa64d",
+    "skills/math-research-reader/references/textbook.md": "52a94cc675700ad872666f42e4db68318b685d0f37607d9879dc1d8101cdf52b",
+    "skills/math-research-reader/references/visualization.md": "ee0cc3d5065221abb5417e15cc5b43980c4582acf3f8b6b3c84b76f108e2a769",
+    "skills/math-research-reader/scripts/build_pdf.py": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+    "skills/math-research-reader/SKILL.md": "e6687d1495d6818332da03eed28e633ee90065d0f408ca07ce4f9fe8e2722c0f"
+  },
+  "documentation_hashes": {
+    "README.md": "d6f9e3499ead6feca62210b4a0716af7a2f41663978fc1fc7271e68a3504539e",
+    "docs/design/05-teaching-feedback.md": "a36a8045dcd748ecef54accef224c9e9366311a4fa670a3078a1842c2f9d4bfa",
+    "evals/results/narrative-teaching-validation.md": "07cc137fad0e536d5fbd67da5f91dde3b97545d74c53ec4bd6444b360dfe9b59"
+  },
+  "record_scope_note": "Historical checks refer to their recorded input versions. Release sanitization changes some documentation and license notices; do not reuse old pass states for new file bytes. Current publication checks are in release-checks.json."
+}

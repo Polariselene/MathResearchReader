@@ -1,0 +1,10 @@
+原始需求保存说明
+
+原始需求全文仅保存在本地私密归档，不随项目公开，也不是Skill运行依赖。
+公开产品需求和已确认偏好见：
+- README.md（本目录）：设计索引；
+- 01-product-and-workflows.md：产品与工作流；
+- 03-requirements-traceability.md：完整语义需求对照；
+- 05-teaching-feedback.md：首次整书测试后的七项反馈。
+
+本文件替代先前公开目录中的逐字快照，不包含原始私人内容。

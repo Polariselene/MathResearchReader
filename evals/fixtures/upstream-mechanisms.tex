@@ -1,0 +1,26 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newcommand{\R}{\mathcal R}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\begin{document}
+\setcounter{section}{2}
+\section{Local matrix convention}
+In this note, $\R=M_2(\mathbb R)$ is the algebra of real two by two matrices.
+Every matrix called positive definite below is also assumed symmetric.
+\begin{lemma}\label{lem:positive-spectrum}
+If $A\in\R$ is positive definite, every eigenvalue of $A$ is positive.
+\end{lemma}
+\begin{proof}
+For an eigenpair with nonzero real vector $v$, positivity gives
+$0<v^\top Av=\lambda v^\top v$, hence $\lambda>0$.
+The real symmetric spectral theorem supplies such eigenvectors.
+\end{proof}
+\begin{theorem}\label{thm:inverse}
+Every positive definite $A\in\R$ is invertible.
+\end{theorem}
+\begin{proof}
+By Lemma~\ref{lem:positive-spectrum}, no eigenvalue is zero.
+The real symmetric spectral theorem therefore gives an invertible diagonalization.
+\end{proof}
+\end{document}

@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "pdf": "applied-math.pdf",
+  "sha256": "73ebec97c322996d3167236eec2bf4882ee1194e10d5b4a0944a92e66ca2f431",
+  "pages": 3,
+  "rendered_and_visually_inspected_pages": [
+    1,
+    2,
+    3
+  ],
+  "visual_status": "pass",
+  "checks": {
+    "chinese": "pass",
+    "math_subscripts_fractions_matrices": "pass",
+    "figure_present_and_correct": "pass",
+    "table_overflow": "pass",
+    "toc_page_numbers": "pass",
+    "page_numbers_headers": "pass",
+    "no_clipping_or_unexpected_blank_pages": "pass",
+    "link_destination_static_check": "pass",
+    "desktop_link_clicking": "unverified"
+  },
+  "notes": [
+    "System text extractor lacks Adobe-GB1 mapping; rendered pages visually checked instead.",
+    "Build manifest keeps visual_qa unverified by design; this separate file records actual review."
+  ]
+}

@@ -1,0 +1,16 @@
+test_check_only_creates_nothing (test_build_pdf.BuildTests.test_check_only_creates_nothing) ... ok
+test_compiler_uses_workspace_temp_without_changing_process_env (test_build_pdf.BuildTests.test_compiler_uses_workspace_temp_without_changing_process_env) ... ok
+test_existing_pdf_requires_explicit_replace (test_build_pdf.BuildTests.test_existing_pdf_requires_explicit_replace) ... ok
+test_failed_compilation_preserves_previous_pdf (test_build_pdf.BuildTests.test_failed_compilation_preserves_previous_pdf) ... ok
+test_invalid_input_never_invokes_compiler (test_build_pdf.BuildTests.test_invalid_input_never_invokes_compiler) ... ok
+test_missing_executable_fails_explicitly (test_build_pdf.BuildTests.test_missing_executable_fails_explicitly) ... ok
+test_missing_glyph_does_not_publish (test_build_pdf.BuildTests.test_missing_glyph_does_not_publish) ... ok
+test_multiple_inputs_keep_requested_order (test_build_pdf.BuildTests.test_multiple_inputs_keep_requested_order) ... ok
+test_output_symlink_cannot_escape_root (test_build_pdf.BuildTests.test_output_symlink_cannot_escape_root) ... skipped 'OS does not allow test symlinks'
+test_path_traversal_absolute_and_protected_paths_rejected (test_build_pdf.BuildTests.test_path_traversal_absolute_and_protected_paths_rejected) ... ok
+test_success_preserves_markdown_and_keeps_qa_unverified (test_build_pdf.BuildTests.test_success_preserves_markdown_and_keeps_qa_unverified) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.195s
+
+OK (skipped=1)
