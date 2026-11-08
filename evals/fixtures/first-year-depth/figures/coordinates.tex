@@ -1,0 +1,23 @@
+% Original teaching figure. T is only a two-real-dimensional subalgebra.
+\documentclass[tikz,border=3mm]{standalone}
+\begin{document}
+\begin{tikzpicture}[>=stealth,font=\small]
+\begin{scope}[x=2.3cm,y=2.3cm]
+\draw[->] (-.25,0)--(1.3,0) node[right] {$a$};
+\draw[->] (0,-.25)--(0,1.35) node[above] {$b$};
+\draw[->,blue,thick] (0,0)--(1,0) node[below] {$1$};
+\draw[->,red,thick] (0,0)--(0,1) node[left] {$t$};
+\fill (.5,.353553) circle (1pt) node[above right] {$m$};
+\node at (.5,1.65) {Coefficient plane in $T$};
+\end{scope}
+\draw[->,thick] (3.6,1.1)--(5,1.1) node[midway,above] {$A$};
+\begin{scope}[shift={(8.1cm,1.4cm)},x=1.35cm,y=1.35cm]
+\draw[->] (-.4,0)--(2,0) node[right] {$z_+$};
+\draw[->] (0,-1.7)--(0,1.65) node[above] {$z_-$};
+\draw[->,blue,thick] (0,0)--(1,1) node[right] {$A(1,0)$};
+\draw[->,red,thick] (0,0)--(1.414214,-1.414214) node[below] {$A(0,1)$};
+\fill (1,0) circle (1.4pt) node[above right] {$(1,0)$};
+\node at (.8,2) {Real slot plane};
+\end{scope}
+\end{tikzpicture}
+\end{document}

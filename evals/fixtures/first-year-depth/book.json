@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "title": "从多项式表示到定向舍入：数学教学校准单元",
+  "lang": "zh-CN",
+  "chapters": [{"id": "rounding", "file": "lesson.md"}]
+}

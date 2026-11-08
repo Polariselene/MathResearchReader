@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-07",
+  "scope": "General full-reading workflow and deterministic publication gate; no new complete paper textbook.",
+  "minimum_teaching_pages": 71,
+  "minimum_physical_pages": 71,
+  "unit_tests": {
+    "total": 28,
+    "passed": 27,
+    "skipped": 1,
+    "skip_reason": "Windows test symlink permission"
+  },
+  "actual_poppler_boundaries": [
+    {
+      "physical_pages": 70,
+      "status": "rejected",
+      "pdfinfo": "actual Poppler execution",
+      "book_mode_trigger_without_cli": true
+    },
+    {
+      "physical_pages": 71,
+      "status": "built",
+      "pdfinfo": "actual Poppler execution",
+      "book_mode_trigger_without_cli": true
+    }
+  ],
+  "real_pandoc_xelatex_short_compile": {
+    "compiler_exit_code": 0,
+    "rejected": true,
+    "physical_pages": 1,
+    "output_not_published": true
+  },
+  "structural_fixtures_are_not_teaching_validation": true,
+  "relative_targets_checked": 105,
+  "installed_files_match_source": 34,
+  "official_structure_validation": "Skill is valid!",
+  "reviewed_files": {
+    "skills/math-research-reader/agents/openai.yaml": "3fa00f4704a47d977fc7911d7d4481904846a37214738037283ff3e5d787e630",
+    "skills/math-research-reader/assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "skills/math-research-reader/assets/teaching/aligned-errors.pdf": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+    "skills/math-research-reader/assets/teaching/aligned-errors.tex": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.pdf": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.tex": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.pdf": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.tex": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.pdf": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.tex": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+    "skills/math-research-reader/LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "skills/math-research-reader/references/deep-read.md": "428b51a9984663da7bff8492daedcd03c85c8bb773249d4abfa4de494409054f",
+    "skills/math-research-reader/references/delivery-contract.md": "2e6a2383e1b68b8ed6c60fbea79a3760d96d7549e82db0b22ade876dcfaa58cc",
+    "skills/math-research-reader/references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "skills/math-research-reader/references/evidence.md": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+    "skills/math-research-reader/references/examples/adjoint-walkthrough.md": "43a238f3830b8f80309c00bd80fea28c4714988e571ceee03be92b18563166bb",
+    "skills/math-research-reader/references/knowledge-base.md": "3c6b0a4c29460f103868a8a743a4a3498ebb42278cfaeadfccdad0492fa0f733",
+    "skills/math-research-reader/references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "skills/math-research-reader/references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "skills/math-research-reader/references/mathematics.md": "2a63ce3a4c68f61b7cbb67831bf0bf972f1858a357314d588937dca5040246d1",
+    "skills/math-research-reader/references/pdf.md": "87ce8538ed34054a38d0924b327bafd8059be6f8e9b2a7c5ce58cc77467fe622",
+    "skills/math-research-reader/references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "skills/math-research-reader/references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "skills/math-research-reader/references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "skills/math-research-reader/references/proof-audit.md": "55dd39fdcec748f18dcc7cf31a361f6d401e03135a4ceded182be4751f8f41d5",
+    "skills/math-research-reader/references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "skills/math-research-reader/references/quality.md": "2d475850cfdd24f0a76f019758723c8e4e949cf40bba2a324801bd35032c6bd1",
+    "skills/math-research-reader/references/source-reading.md": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+    "skills/math-research-reader/references/synthesis.md": "2e7e9362c86a67c2b95a9a40a16455338693793f79eca22cbae8617925152cc5",
+    "skills/math-research-reader/references/teaching-style.md": "b78d57a1adcb81c0fbd298841eec832054d713bd061f3d33cb20b6d6cf671039",
+    "skills/math-research-reader/references/textbook.md": "7fdbdabc0511f2f771bafa2846efb1046ff0578b032d33a9d7e8f72e542d621a",
+    "skills/math-research-reader/references/visualization.md": "de388e4f63bdd801d60cd97168f3b55e637e55a9b545398eb63e0630d6de1ad3",
+    "skills/math-research-reader/scripts/build_pdf.py": "6525132c3db50a0fadb5f8235fd89600d896f4fb5b1ac64b6d54be9bb9da2903",
+    "skills/math-research-reader/SKILL.md": "7784b15118a48a1d44c61f0694ed3b16ebd4783c40946593cf03e90ba5f88172"
+  },
+  "limitations": [
+    "Physical page count cannot certify 71 substantive teaching pages; manual content review remains mandatory.",
+    "Mode identifiers must reflect the requested task; export is not a complete-reading workaround.",
+    "No independent reader study or new full-book teaching evaluation.",
+    "No commit, push or release update."
+  ]
+}

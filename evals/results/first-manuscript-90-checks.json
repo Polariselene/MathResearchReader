@@ -1,0 +1,133 @@
+{
+  "date": "2026-11-08",
+  "scope": "Whole-skill instructions, deterministic gates and cache navigation; no new full-paper textbook or independent learner study.",
+  "delivery_contract": {
+    "minimum_substantive_teaching_pages": 90,
+    "maximum_visible_main_chapters": 10,
+    "first_manuscript": "complete course blueprint before full teaching prose; content-reviewed before first full-book export",
+    "physical_page_gate_does_not_certify_teaching": true
+  },
+  "unit_tests": {
+    "command": "python -B -X utf8 -m unittest discover -s tests -v",
+    "total": 52,
+    "passed": 51,
+    "skipped": 1,
+    "skip_reason": "OS does not allow test symlinks",
+    "failed": 0
+  },
+  "tested_boundaries": {
+    "mock_pdf_89_pages": "rejected, previous output preserved",
+    "mock_pdf_90_pages": "physical page gate accepted; QA unverified",
+    "legacy_contract_pages": [
+      70,
+      71
+    ],
+    "planned_or_composing": "full export stopped before tool probing",
+    "content_reviewed": "still subject to 90 pages and 10 main chapters"
+  },
+  "actual_tool_integration": {
+    "actual_pandoc_11_chapters_rejected_before_tex": true,
+    "composing_rejected_before_tool_probe": true,
+    "locator": {
+      "matching_lines": 10,
+      "returned_lines": 2,
+      "more_matches": true,
+      "locator_only": true
+    },
+    "scope": "Structural/preflight and cache-location integration only; no new full-paper textbook.",
+    "real_pandoc_structure": {
+      "10": {
+        "status": "pass",
+        "visible_chapters": 10,
+        "heading_level": 1,
+        "maximum": 10,
+        "scope": "Pandoc heading structure; final PDF outline still needs visual review"
+      },
+      "11": {
+        "rejected": true,
+        "reason": "Full-read document has 11 top-level chapters; maximum is 10. Reorganize the teaching narrative; do not merely hide headings."
+      }
+    }
+  },
+  "official_quick_validate": {
+    "source": {
+      "returncode": 0,
+      "output": "Skill is valid!"
+    },
+    "installed": {
+      "returncode": 0,
+      "output": "Skill is valid!"
+    }
+  },
+  "installed_package": {
+    "kind": "junction to project skill",
+    "matching_package_files": 35,
+    "all_hashes_match": true
+  },
+  "yaml": "parsed; invocation and existing implicit policy retained",
+  "relative_file_links": {
+    "markdown_files": 26,
+    "links_checked": 97,
+    "missing": 0,
+    "anchor_semantics": "not part of this file-existence check"
+  },
+  "git_diff_check": {
+    "returncode": 0
+  },
+  "efficiency": {
+    "mechanisms": [
+      "bounded cached-text location before full-unit page reading",
+      "deduplicated planning fields and references by object ID/Markdown anchor",
+      "conditional rule loading",
+      "single Markdown content source",
+      "shared figure data/style with per-figure verification",
+      "incremental checks bound to changed dependencies",
+      "no repeated abridged-book compilation"
+    ],
+    "account_quota_measured": false,
+    "saving_percentage_claimed": false,
+    "teaching_output_reduced": false
+  },
+  "package_sha256": {
+    "agents/openai.yaml": "d57873c2dbcbb3db91209d3e6c255f1b014f41d559f372adcfc8d5bc9beabf2a",
+    "assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "assets/teaching/aligned-errors.pdf": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+    "assets/teaching/aligned-errors.tex": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+    "assets/teaching/complex-adjoint.pdf": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+    "assets/teaching/complex-adjoint.tex": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+    "assets/teaching/coordinate-alignment.pdf": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+    "assets/teaching/coordinate-alignment.tex": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+    "assets/teaching/orthogonal-projection.pdf": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+    "assets/teaching/orthogonal-projection.tex": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+    "LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "references/deep-read.md": "f0383330655e0938f2e9c8d6d9102f507ccbaddad1ed97520ecb0db7a8ee6764",
+    "references/delivery-contract.md": "fad1a105c1f047764f310ad4e26a48ed4259059e9a7fff85473e95a1096a8969",
+    "references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "references/evidence.md": "c3d6f4b6145c9a2373d6a496b300ef6e57466077e9142152d05bfa9349a14eb4",
+    "references/examples/adjoint-walkthrough.md": "8fbb2e59b32081c0d4939c53b45a7a03ba10b3985807202d2aca2982d39bb83c",
+    "references/knowledge-base.md": "4edfe5b06e9173fe09600abae57b69cc7e55e642e848f1349e05a84af02e9da8",
+    "references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "references/mathematics.md": "dedcdfc36db8c1ea99b73b59d2541140b9b103017412069fc68de760b3b0e721",
+    "references/pdf.md": "f8278f15a60ca3f307cd35d141cf1ec489892dcc43afd863cc1a3dca2e675c49",
+    "references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "references/proof-audit.md": "c1f93ddfd533587bcb3d5b524eb96148970eddb9f0961648a9183a03214dceb7",
+    "references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "references/quality.md": "7e059a1ff1c69378423317fd44ce2b283773b613d99d41075fd04dcf2215afdd",
+    "references/source-reading.md": "155b77489302797d1c8c37c17589aa2a5b676997b25cd71bab13c80dc831e424",
+    "references/synthesis.md": "9e1bd227dbf6057ee5565e25a82661750c4e8864c6a2def98cd6a5b01e87f18a",
+    "references/teaching-style.md": "bf841cc4f902a44fc27e48e89b09fc33df0ce420c69870e388d2352a44601c9f",
+    "references/textbook.md": "a69df5816fa8c7e4c275544c86867486aec2cb12392000116c650ad36109c273",
+    "references/visualization.md": "07ec371d1603c090d1a7021d68ca7c763c2a7615ea05f4c734b2245441aa1817",
+    "scripts/build_pdf.py": "e6ba2b4f108749ddc6e90741fa26a489d214a9f4c846d1841d48958ddec8422e",
+    "scripts/reading_cache.py": "a448c50d2fdf39e0a53455807c674c2cb0f837168ede1ce853748fcde7a1146c",
+    "SKILL.md": "8c6883c0a8543cbe4ea30695462bc92d1b5df887cc7eed13fc55d204e0b66ca9"
+  },
+  "test_sha256": {
+    "tests/test_book.py": "070e48c7906ca11451d0f61c976aeb4d5ed180bcb7e03d69cbea81b720a723e8",
+    "tests/test_build_pdf.py": "d7c7892942c47bcd03d50895c28526c75d45e50760efb3f6837de981d505712a",
+    "tests/test_reading_cache.py": "087951530f444adab81649dd3472aa5e8a8f81410bfd8187fb12f240c4116e43"
+  }
+}

@@ -28,6 +28,14 @@
 `evals/results/applied-math.pdf`和`textbook-sample.pdf`是本地生成的限定范围教学样例，
 不是原论文复印件。对应Markdown给出论文身份、来源和重建边界；不代表完整论文复现。
 
+`evals/fixtures/first-year-depth/`中的代数教学单元及四份TikZ源为本项目自编，
+同目录四份图形PDF由这些源生成，是保留的矢量测试资产，不是外部论文原图。
+该单元只验证局部数学教学与构建，不认证任何加密方案；整篇测试PDF与编译中间文件留在忽略目录。
+
+`skills/math-research-reader/assets/teaching/`中的四份TikZ源与同名矢量PDF也是本项目原创教学资产，
+用于随包讲解示范的坐标对齐、复平面旋转、正交投影和误差方向；非论文原图。
+它们适用下述字体嵌入范围，编译日志与测试整篇PDF不分发。
+
 这些PDF含第三方字体子集。已核对本机TeX发行版中的字体许可：STIX Two Math和所用AMS/CM字体的
 OFL许可、Fandol的GPL与字体嵌入例外、Latin Modern的GUST Font License。字体按其许可嵌入文档，
 字体程序不因此改为MIT；本项目不分发原始字体文件。文档嵌入的规定另见

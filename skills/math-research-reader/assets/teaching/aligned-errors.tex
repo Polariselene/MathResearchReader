@@ -1,0 +1,25 @@
+% Original geometry of already aligned error vectors in R^2; both panels use the same scale.
+\documentclass[tikz,border=4mm]{standalone}
+\begin{document}
+\begin{tikzpicture}[>=stealth,font=\small,x=2.5cm,y=2.5cm]
+\foreach \offset/\title in {0/Different directions,2.9/Same direction} {
+\begin{scope}[shift={(\offset,0)}]
+\draw[->,gray] (-.15,0)--(1.4,0);
+\draw[->,gray] (0,-.15)--(0,1.4);
+\draw[gray!50,dashed] (1,0) arc[start angle=0,end angle=90,radius=1];
+\node at (.5,1.72) {\title};
+\end{scope}}
+\draw[->,blue,thick] (0,0)--(1,0) node[below] {$v_0$};
+\draw[->,red,thick] (0,0)--(0,1) node[above right] {$v_1$};
+\draw[->,teal,very thick] (0,0)--(.5,.5) node[above right] {$\bar v$};
+\draw[dotted] (1,0)--(.5,.5)--(0,1);
+\node at (.5,-.48) {$\|\bar v\|=1/\sqrt2$};
+\begin{scope}[shift={(2.9,0)}]
+\draw[->,blue,line width=2pt] (0,0)--(1,0);
+\draw[->,red,dashed,thick] (0,0)--(1,0);
+\fill[teal] (1,0) circle (1.4pt);
+\node[above right] at (.65,0) {$v_0=v_1=\bar v$};
+\node at (.5,-.48) {$\|\bar v\|=1$};
+\end{scope}
+\end{tikzpicture}
+\end{document}

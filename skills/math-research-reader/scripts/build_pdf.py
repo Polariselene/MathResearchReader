@@ -19,8 +19,86 @@ class BuildError(Exception):
     pass
 
 
+FULL_READ_MIN_PAGES = 90
+FULL_READ_MAX_CHAPTERS = 10
+# Recognize older task contracts too; their exports now use the current 90-page gate.
+LEGACY_FULL_READ_SCOPE_PAGES = 70
+
+
+def check_full_read_structure(documents: list[dict]) -> dict:
+    levels = []
+    for doc in documents:
+        if not isinstance(doc, dict) or not isinstance(doc.get("blocks"), list):
+            raise BuildError("Cannot verify full-read chapter structure.")
+        for node in nodes(doc["blocks"]):
+            if node["t"] == "Header":
+                levels.append(node["c"][0])
+            elif node["t"] in {"RawBlock", "RawInline"}:
+                fmt, raw = node["c"]
+                if fmt in {"tex", "latex"} and re.search(r"\\(?:part|chapter|section)\*?\s*(?:\[[^\]]*\]\s*)?\{", raw):
+                    raise BuildError("Use Markdown chapter headings for verifiable full-read structure, not raw TeX section commands.")
+    level = min(levels) if levels else None
+    count = levels.count(level) if levels else 1
+    if count > FULL_READ_MAX_CHAPTERS:
+        raise BuildError(f"Full-read document has {count} top-level chapters; maximum is {FULL_READ_MAX_CHAPTERS}. "
+                         "Reorganize the teaching narrative; do not merely hide headings.")
+    return {"status": "pass", "visible_chapters": count, "heading_level": level,
+            "maximum": FULL_READ_MAX_CHAPTERS, "scope": "Pandoc heading structure; final PDF outline still needs visual review"}
+
+
+def check_full_read_pages(path: Path, pdfinfo: str, root: Path) -> dict:
+    """Fail closed before publication. Page count does not certify teaching quality."""
+    result = run([pdfinfo, str(path)], root)
+    match = re.search(r"^Pages:\s*(\d+)\s*$", result.stdout, re.MULTILINE)
+    if result.returncode or not match:
+        raise BuildError("Cannot verify full-read PDF pages with pdfinfo; publication stopped.")
+    pages = int(match.group(1))
+    if pages < FULL_READ_MIN_PAGES:
+        raise BuildError(f"Full-read PDF has {pages} pages; requires at least {FULL_READ_MIN_PAGES}. "
+                         "Expand relevant teaching content and rebuild; do not pad pages.")
+    return {"pages": pages, "minimum": FULL_READ_MIN_PAGES, "status": "pass",
+            "scope": "physical PDF pages only; substantive teaching pages require content review"}
+
+
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def full_read_scope(root: Path, book: dict | None, explicit: bool) -> tuple[list[str], dict[str, str]]:
+    """Inherit the task contract even when an export command omits the mode flag."""
+    reasons = ["cli"] if explicit else []
+    if book and book.get("task_mode") == "deep-read":
+        reasons.append("book")
+    snapshots = {}
+    unfinished = []
+    for filename in (".mrr/state.json", ".mrr/reading-plan.json"):
+        if not (root / filename).exists():
+            continue
+        path = scoped(root, filename)
+        try:
+            data = json.loads(path.read_text(encoding="utf-8"))
+        except (ValueError, UnicodeError) as exc:
+            raise BuildError(f"Invalid task contract: {filename}; repair it before export.") from exc
+        if not isinstance(data, dict):
+            raise BuildError(f"Task contract must be an object: {filename}")
+        snapshots[filename] = digest(path)
+        manuscript = data.get("first_manuscript_status")
+        if manuscript is not None:
+            if manuscript not in ("planned", "composing", "content-reviewed"):
+                raise BuildError(f"Invalid first_manuscript_status in {filename}.")
+            if manuscript != "content-reviewed":
+                unfinished.append(filename)
+        contract = data.get("delivery_contract", {})
+        minimum = data.get("minimum_teaching_pages")
+        if isinstance(contract, dict):
+            minimum = contract.get("minimum_teaching_pages", minimum)
+        if (data.get("mode") == "deep-read" or data.get("task_mode") == "deep-read" or
+                (isinstance(minimum, (int, float)) and minimum >= LEGACY_FULL_READ_SCOPE_PAGES)):
+            reasons.append(filename)
+    if reasons and unfinished:
+        raise BuildError("Complete and review the first full teaching manuscript before PDF export; "
+                         "do not compile a short book to drive page-filling iterations.")
+    return reasons, snapshots
 
 
 def scoped(root: Path, value: str) -> Path:
@@ -79,6 +157,9 @@ def load_book(root: Path, filename: str) -> tuple[Path, dict, list[tuple[str, Pa
     data = json.loads(path.read_text(encoding="utf-8"))
     if not isinstance(data, dict) or data.get("schema_version") != 1:
         raise BuildError("Book must be an object with schema_version=1.")
+    if "task_mode" in data and data["task_mode"] not in (
+            "deep-read", "proof-audit", "explain", "compare", "export"):
+        raise BuildError("Unsupported book task_mode.")
     rows = data.get("chapters")
     if not isinstance(rows, list) or not rows:
         raise BuildError("Book needs a nonempty ordered chapters list.")
@@ -203,8 +284,8 @@ def build(args) -> dict:
     root = Path(args.root).resolve(strict=True)
     if not root.is_dir():
         raise BuildError("Root must be a directory.")
-    tools = diagnose(args, root)
     if args.check:
+        tools = diagnose(args, root)
         return {"status": "tools-available", "font_check": "requires-build", **tools}
     book_file, book_data, chapters = None, None, None
     if getattr(args, "book", None):
@@ -216,6 +297,9 @@ def build(args) -> dict:
         raise BuildError("At least one --input Markdown file is required.")
     else:
         inputs = [scoped(root, item) for item in args.input]
+    full_read_sources, task_snapshot = full_read_scope(root, book_data, getattr(args, "full_read", False))
+    full_read = bool(full_read_sources)
+    pdfinfo = executable(getattr(args, "pdfinfo", "pdfinfo")) if full_read else None
     for path in inputs:
         if path.suffix.lower() != ".md" or not path.is_file():
             raise BuildError(f"Input is not an existing Markdown file: {path}")
@@ -226,6 +310,7 @@ def build(args) -> dict:
     if output.exists() and not args.replace:
         raise BuildError(f"Output exists; review it and use --replace: {output}")
     output_before = digest(output) if output.exists() else None
+    tools = diagnose(args, root)
     header = Path(__file__).resolve().parents[1] / "assets" / "pdf-header.tex"
     build_root = scoped(root, "build")
     build_root.mkdir(exist_ok=True)
@@ -241,6 +326,8 @@ def build(args) -> dict:
     if args.cjk_font:
         command.extend(["-V", "CJKmainfont=" + args.cjk_font])
     manifest = {"schema_version": 1, "status": "building", "visual_qa": "unverified",
+                "full_read": full_read,
+                "full_read_sources": full_read_sources, "task_snapshot": task_snapshot,
                 "inputs": [{"path": str(p.relative_to(root)), "sha256": digest(p)} for p in inputs],
                 "header_sha256": digest(header), "tools": tools, "command": command,
                 "builder_sha256": digest(Path(__file__)),
@@ -255,6 +342,23 @@ def build(args) -> dict:
                                 "chapters": [chapter_id for chapter_id, _ in chapters]}
             manifest["assembled_sha256"] = digest(assembled)
             manifest["command"] = command
+        if full_read:
+            manifest["structure_gate"] = {"status": "unverified", "maximum": FULL_READ_MAX_CHAPTERS}
+            try:
+                if chapters:
+                    documents = [json.loads(assembled.read_text(encoding="utf-8"))]
+                else:
+                    documents = []
+                    for i, source in enumerate(inputs):
+                        parsed = run([tools["pandoc"], str(source), "--from=markdown+tex_math_dollars+link_attributes", "--to=json"], root)
+                        (work / f"structure-{i}.log").write_text(parsed.stderr, encoding="utf-8")
+                        if parsed.returncode:
+                            raise BuildError("Cannot parse full-read chapter structure.")
+                        documents.append(json.loads(parsed.stdout))
+                manifest["structure_gate"] = check_full_read_structure(documents)
+            except (BuildError, ValueError):
+                manifest["structure_gate"]["status"] = "fail"
+                raise
         result = run(command, root, timeout=compile_timeout)
         log = result.stdout + "\n" + result.stderr
         (work / "build.log").write_text(log, encoding="utf-8")
@@ -265,10 +369,20 @@ def build(args) -> dict:
             raise BuildError(f"Missing glyphs detected. See {work / 'build.log'}")
         if not target.read_bytes().startswith(b"%PDF-"):
             raise BuildError("Compiler did not produce a PDF file.")
+        if full_read:
+            manifest["page_gate"] = {"status": "unverified", "minimum": FULL_READ_MIN_PAGES}
+            try:
+                manifest["page_gate"] = check_full_read_pages(target, pdfinfo, root)
+            except BuildError:
+                manifest["page_gate"]["status"] = "fail"
+                raise
         if any(digest(root / item["path"]) != item["sha256"] for item in manifest["inputs"]):
             raise BuildError("Source Markdown changed during build; recheck it before publishing.")
         if book_file and digest(book_file) != manifest["book"]["sha256"]:
             raise BuildError("Book manifest changed during build.")
+        current_scope, current_snapshot = full_read_scope(root, book_data, getattr(args, "full_read", False))
+        if current_scope != full_read_sources or current_snapshot != task_snapshot:
+            raise BuildError("Task contract changed during build; recheck it before publishing.")
         if digest(header) != manifest["header_sha256"]:
             raise BuildError("PDF template changed during build.")
         if (digest(output) if output.exists() else None) != output_before:
@@ -297,6 +411,9 @@ def main() -> int:
     parser.add_argument("--root", required=True)
     parser.add_argument("--input", action="append")
     parser.add_argument("--book", help="Workspace-relative book JSON: ordered chapters and metadata.")
+    parser.add_argument("--full-read", action="store_true",
+                        help="Require at least 90 PDF pages and at most 10 visible chapters for a complete reading.")
+    parser.add_argument("--pdfinfo", default="pdfinfo", help="Poppler pdfinfo for full-read page verification.")
     parser.add_argument("--output", default="exports/report.zh-CN.pdf")
     parser.add_argument("--pandoc", default="pandoc")
     parser.add_argument("--xelatex", default="xelatex")

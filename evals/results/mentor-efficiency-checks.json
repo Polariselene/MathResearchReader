@@ -1,0 +1,181 @@
+{
+  "date": "2026-11-07",
+  "scope": "General mentor-style workflow, repeat-work reduction and inherited task gate. No full-paper or account-usage certification.",
+  "tests": {
+    "total": 32,
+    "passed": 31,
+    "skipped": 1,
+    "skip_reason": "Windows test symlink permission"
+  },
+  "integration": {
+    "fresh_scope_checks": [
+      {
+        "topic": "linear-algebra",
+        "fresh_workspace": true,
+        "cli_flag": false,
+        "book": false,
+        "gate_sources": [
+          ".mrr/state.json"
+        ]
+      },
+      {
+        "topic": "analysis",
+        "fresh_workspace": true,
+        "cli_flag": false,
+        "book": false,
+        "gate_sources": [
+          ".mrr/state.json"
+        ]
+      }
+    ],
+    "real_page_counter": [
+      {
+        "pages": 70,
+        "status": "rejected",
+        "tool": "actual Poppler pdfinfo",
+        "fixture": "existing structural fixture; not a teaching document"
+      },
+      {
+        "pages": 71,
+        "status": "pass",
+        "tool": "actual Poppler pdfinfo",
+        "fixture": "existing structural fixture; not a teaching document"
+      }
+    ]
+  },
+  "instruction_sizes": {
+    "before": {
+      "SKILL.md": {
+        "bytes": 9295,
+        "characters": 4053
+      },
+      "references/deep-read.md": {
+        "bytes": 3260,
+        "characters": 1298
+      },
+      "references/delivery-contract.md": {
+        "bytes": 3768,
+        "characters": 1374
+      },
+      "references/textbook.md": {
+        "bytes": 14597,
+        "characters": 5175
+      },
+      "references/teaching-style.md": {
+        "bytes": 8202,
+        "characters": 2868
+      },
+      "references/source-reading.md": {
+        "bytes": 2884,
+        "characters": 1160
+      },
+      "references/synthesis.md": {
+        "bytes": 6277,
+        "characters": 2419
+      },
+      "references/quality.md": {
+        "bytes": 8506,
+        "characters": 3234
+      },
+      "references/knowledge-base.md": {
+        "bytes": 5736,
+        "characters": 3276
+      },
+      "references/mathematics.md": {
+        "bytes": 9063,
+        "characters": 3316
+      }
+    },
+    "after": {
+      "SKILL.md": {
+        "bytes": 4728,
+        "characters": 2261
+      },
+      "references/deep-read.md": {
+        "bytes": 7158,
+        "characters": 2509
+      },
+      "references/delivery-contract.md": {
+        "bytes": 4267,
+        "characters": 1603
+      },
+      "references/textbook.md": {
+        "bytes": 14842,
+        "characters": 5272
+      },
+      "references/teaching-style.md": {
+        "bytes": 8256,
+        "characters": 2886
+      },
+      "references/source-reading.md": {
+        "bytes": 3442,
+        "characters": 1370
+      },
+      "references/synthesis.md": {
+        "bytes": 6801,
+        "characters": 2611
+      },
+      "references/quality.md": {
+        "bytes": 8973,
+        "characters": 3403
+      },
+      "references/knowledge-base.md": {
+        "bytes": 6509,
+        "characters": 3607
+      },
+      "references/mathematics.md": {
+        "bytes": 9063,
+        "characters": 3316
+      }
+    },
+    "scope": "Static text sizes, not runtime token/quota measurement."
+  },
+  "actual_account_usage_measured": false,
+  "independent_model_forward_test": false,
+  "new_full_book_validation": false,
+  "relative_file_targets_checked": 83,
+  "installed_files_match_source": 34,
+  "official_validator": "Skill is valid!",
+  "reviewed_files": {
+    "skills/math-research-reader/agents/openai.yaml": "d1c8106179ee35f48527e206514730aa718d280e170d217883a7e70a26fccbba",
+    "skills/math-research-reader/assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "skills/math-research-reader/assets/teaching/aligned-errors.pdf": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+    "skills/math-research-reader/assets/teaching/aligned-errors.tex": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.pdf": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.tex": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.pdf": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.tex": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.pdf": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.tex": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+    "skills/math-research-reader/LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "skills/math-research-reader/references/deep-read.md": "13621459c3358f6857d49c19fc216abbd20cf61d263258d57a305345331d6f7f",
+    "skills/math-research-reader/references/delivery-contract.md": "809e3ba4acf3685cd9bf067230a24121f0527200f5780db9c2132e9e94f723fd",
+    "skills/math-research-reader/references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "skills/math-research-reader/references/evidence.md": "c3d6f4b6145c9a2373d6a496b300ef6e57466077e9142152d05bfa9349a14eb4",
+    "skills/math-research-reader/references/examples/adjoint-walkthrough.md": "43a238f3830b8f80309c00bd80fea28c4714988e571ceee03be92b18563166bb",
+    "skills/math-research-reader/references/knowledge-base.md": "4ccb189f1a2e4ea9e0836da9d5bff105abaee8189ebade811339c14965127ae5",
+    "skills/math-research-reader/references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "skills/math-research-reader/references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "skills/math-research-reader/references/mathematics.md": "2a63ce3a4c68f61b7cbb67831bf0bf972f1858a357314d588937dca5040246d1",
+    "skills/math-research-reader/references/pdf.md": "8858edd73a7215f79d8056fb9cf06596d38ca6be6a20196f0536accc9d602741",
+    "skills/math-research-reader/references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "skills/math-research-reader/references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "skills/math-research-reader/references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "skills/math-research-reader/references/proof-audit.md": "c1f93ddfd533587bcb3d5b524eb96148970eddb9f0961648a9183a03214dceb7",
+    "skills/math-research-reader/references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "skills/math-research-reader/references/quality.md": "00f3a896de374a14afedcd2b2474127412d15e34e4bb27ed7c081f7dc19b3240",
+    "skills/math-research-reader/references/source-reading.md": "322a632686daca2cd70e2cbb2abd55ec4bfafa1c5c2941ef1eef56d6da960a47",
+    "skills/math-research-reader/references/synthesis.md": "aa9cc6f2d5a9735334d10db8d2189009519d6138919050e8d7f3ec4b31c29eec",
+    "skills/math-research-reader/references/teaching-style.md": "79966883117c9c29d69c6b6baa5c302ae62b2214cc937c2b0d207d48ac4bae81",
+    "skills/math-research-reader/references/textbook.md": "614aba48e814ad98757a2389ba311390e0fc552bcf7202eac3bcae970f410415",
+    "skills/math-research-reader/references/visualization.md": "de388e4f63bdd801d60cd97168f3b55e637e55a9b545398eb63e0630d6de1ad3",
+    "skills/math-research-reader/scripts/build_pdf.py": "8d062f75fb645b947c9fa29e9962970330132e6e6dfbbf064f0f8a6ef1d8ae68",
+    "skills/math-research-reader/SKILL.md": "8a1f44d67c2587fb932f091999bea44f24d5916666391a71ecb9b834c6bc96a6"
+  },
+  "notes": [
+    "All dimensions of mathematical and final-page checking retained; repeat reads and intermediate exports reduced by workflow.",
+    "Page-floor inheritance is programmatic; teacher behavior and economy instructions are model-executed, not a guaranteed scheduler or billing feature.",
+    "Historical validation records retain their original scope.",
+    "No commit, push, release update or user-reading artifact changes."
+  ]
+}

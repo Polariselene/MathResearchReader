@@ -95,7 +95,7 @@ class BookTests(unittest.TestCase):
             with self.assertRaisesRegex(pdf.BuildError, "Materialize remote media"):
                 pdf.assemble_book(self.root, data, chapters, self.work, "pandoc")
 
-    def test_no_arbitrary_chapter_cap_and_manifest_order_preserved(self):
+    def test_assembly_keeps_all_fragments_in_manifest_order(self):
         chapters = [(f"c{i}", self.a if i == 0 else self.root / f"c{i}.md") for i in range(121)]
         with patch.object(pdf, "run", return_value=subprocess.CompletedProcess([], 0, json.dumps(document("单元")), "")):
             output = pdf.assemble_book(self.root, {}, chapters, self.work, "pandoc")
@@ -114,6 +114,24 @@ class BookTests(unittest.TestCase):
         import argparse
         with self.assertRaisesRegex(pdf.BuildError, "Compile timeout"):
             pdf.build(argparse.Namespace(timeout=0))
+
+    def test_full_read_chapter_cap_accepts_10_rejects_11(self):
+        def headings(n, level=1):
+            return {"blocks": [{"t": "Header", "c": [level, [str(i), [], []], []]} for i in range(n)]}
+        self.assertEqual(pdf.check_full_read_structure([headings(10)])["visible_chapters"], 10)
+        for level in [1, 2]:
+            with self.subTest(level=level), self.assertRaisesRegex(pdf.BuildError, "maximum is 10"):
+                pdf.check_full_read_structure([headings(11, level)])
+
+    def test_full_read_counts_visible_chapters_not_fragment_files(self):
+        docs = [document("one chapter")] + [{"blocks": [{"t": "Para", "c": [
+            {"t": "Str", "c": "continuous proof"}]}]} for _ in range(120)]
+        self.assertEqual(pdf.check_full_read_structure(docs)["visible_chapters"], 1)
+
+    def test_raw_tex_cannot_hide_extra_chapters(self):
+        for raw in [r"\section{extra}", r"\chapter*{extra}", r"\part[short]{extra}"]:
+            with self.subTest(raw=raw), self.assertRaisesRegex(pdf.BuildError, "Markdown chapter headings"):
+                pdf.check_full_read_structure([{"blocks": [{"t": "RawBlock", "c": ["latex", raw]}]}])
 
 
 if __name__ == "__main__":

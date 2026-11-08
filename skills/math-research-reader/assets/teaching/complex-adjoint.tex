@@ -1,0 +1,22 @@
+% Original geometry for the special scalar A=i, not a general inverse-adjoint identity.
+\documentclass[tikz,border=4mm]{standalone}
+\usepackage{amsmath}
+\begin{document}
+\begin{tikzpicture}[>=stealth,font=\small,x=1.1cm,y=1.1cm]
+\foreach \offset in {0,6} {
+\begin{scope}[shift={(\offset,0)}]
+\draw[->,gray] (-1.8,0)--(2.7,0) node[right] {$\operatorname{Re}$};
+\draw[->,gray] (0,-2.5)--(0,2.1) node[above] {$\operatorname{Im}$};
+\end{scope}}
+\draw[->,blue,thick] (0,0)--(1,1) node[above right] {$x=1+i$};
+\draw[->,red,thick] (0,0)--(-1,1) node[above left] {$Ax=-1+i$};
+\draw[->,teal,thick] (.5,.5) arc[start angle=45,end angle=135,radius=.7071];
+\node at (0,-1.2) {$A:x\mapsto ix$};
+\begin{scope}[shift={(6,0)}]
+\draw[->,blue,thick] (0,0)--(2,1) node[above right] {$y=2+i$};
+\draw[->,red,thick] (0,0)--(1,-2) node[below right] {$A^*y=1-2i$};
+\draw[->,teal,thick] (.7,.35) arc[start angle=26.565,end angle=-63.435,radius=.7826];
+\node at (0,-3) {$A^*:y\mapsto-iy$};
+\end{scope}
+\end{tikzpicture}
+\end{document}

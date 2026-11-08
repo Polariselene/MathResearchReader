@@ -1,0 +1,219 @@
+{
+  "date": "2026-11-07",
+  "scope": "Illustrated self-authored teaching unit; not whole-paper or reader-study validation.",
+  "official_validation": "Skill is valid!",
+  "package": {
+    "relative_targets_checked": 111,
+    "metadata_valid": true,
+    "all_targets_exist": true
+  },
+  "mathematics": {
+    "general_column_maps": [
+      {
+        "d": 1,
+        "columns": 2,
+        "trials": 12,
+        "max_recovery_residual": 3.1401849173675503e-16
+      },
+      {
+        "d": 2,
+        "columns": 2,
+        "trials": 12,
+        "max_recovery_residual": 1.2779626727101132e-15
+      },
+      {
+        "d": 3,
+        "columns": 4,
+        "trials": 12,
+        "max_recovery_residual": 1.6069495541038012e-15
+      },
+      {
+        "d": 5,
+        "columns": 3,
+        "trials": 12,
+        "max_recovery_residual": 1.0925618424287061e-15
+      }
+    ],
+    "projection_diagram": {
+      "Y": [
+        4,
+        0
+      ],
+      "PY": [
+        2,
+        2
+      ],
+      "residual": [
+        2,
+        -2
+      ],
+      "orthogonal": true
+    },
+    "complex_diagram": {
+      "x": "1+i",
+      "Ax": "-1+i",
+      "y": "2+i",
+      "adjoint_y": "1-2i"
+    },
+    "aligned_error_diagram": {
+      "different_direction_mean_norm": 0.7071067811865475,
+      "same_direction_mean_norm": 1
+    },
+    "common_kernel_boundary_checked": true,
+    "scope": "Numerical checks support the explicitly stated examples; general claims are established by the written argument."
+  },
+  "assembly": {
+    "math_nodes_before": 194,
+    "math_nodes_after": 194,
+    "math_sequence_preserved": true,
+    "embedded_figures": 4,
+    "builder_status": "built",
+    "builder_sha256": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+    "header_sha256": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96"
+  },
+  "figures": [
+    {
+      "source": "skills/math-research-reader/assets/teaching/aligned-errors.tex",
+      "source_sha256": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+      "embedded": "skills/math-research-reader/assets/teaching/aligned-errors.pdf",
+      "sha256": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+      "vector_paths": 23,
+      "raster_images": 0,
+      "visual_check": "pass; actual complete figure viewed, and final error-direction revision viewed again"
+    },
+    {
+      "source": "skills/math-research-reader/assets/teaching/complex-adjoint.tex",
+      "source_sha256": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+      "embedded": "skills/math-research-reader/assets/teaching/complex-adjoint.pdf",
+      "sha256": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+      "vector_paths": 20,
+      "raster_images": 0,
+      "visual_check": "pass; actual complete figure viewed, and final error-direction revision viewed again"
+    },
+    {
+      "source": "skills/math-research-reader/assets/teaching/coordinate-alignment.tex",
+      "source_sha256": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+      "embedded": "skills/math-research-reader/assets/teaching/coordinate-alignment.pdf",
+      "sha256": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+      "vector_paths": 21,
+      "raster_images": 0,
+      "visual_check": "pass; actual complete figure viewed, and final error-direction revision viewed again"
+    },
+    {
+      "source": "skills/math-research-reader/assets/teaching/orthogonal-projection.tex",
+      "source_sha256": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+      "embedded": "skills/math-research-reader/assets/teaching/orthogonal-projection.pdf",
+      "sha256": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+      "vector_paths": 14,
+      "raster_images": 0,
+      "visual_check": "pass; actual complete figure viewed, and final error-direction revision viewed again"
+    }
+  ],
+  "pdf": {
+    "location": "Ignored local calibration output",
+    "pages": 8,
+    "sha256": "5fe4de32c8e79c2703ffdc64d0ea628a5e58e348dd8231467f577bafcf8f1ec2",
+    "visual_qa": "pass",
+    "page_checks": [
+      {
+        "page": 1,
+        "raster_images": 0,
+        "vector_paths": 0,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 2,
+        "raster_images": 0,
+        "vector_paths": 23,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 3,
+        "raster_images": 0,
+        "vector_paths": 10,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 4,
+        "raster_images": 0,
+        "vector_paths": 28,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 5,
+        "raster_images": 0,
+        "vector_paths": 2,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 6,
+        "raster_images": 0,
+        "vector_paths": 4,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 7,
+        "raster_images": 0,
+        "vector_paths": 20,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      },
+      {
+        "page": 8,
+        "raster_images": 0,
+        "vector_paths": 34,
+        "visual_status": "pass",
+        "method": "Rendered final PDF at 1.05x and viewed every page."
+      }
+    ]
+  },
+  "teaching_self_review": {
+    "scope": "Generalization of scalar adjoint, cyclic alignment, low-dimensional projection and error diagrams, and general column-map left inverse.",
+    "status": "pass",
+    "reader_feedback": "unverified",
+    "independent_review": false,
+    "full_paper_revalidation": false
+  },
+  "reviewed_files": {
+    "skills/math-research-reader/agents/openai.yaml": "b6e5ac0ff334448bd6009f8b9751b298f063f6993022e078ff109b6b5d64b3d3",
+    "skills/math-research-reader/assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "skills/math-research-reader/assets/teaching/aligned-errors.pdf": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+    "skills/math-research-reader/assets/teaching/aligned-errors.tex": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.pdf": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+    "skills/math-research-reader/assets/teaching/complex-adjoint.tex": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.pdf": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+    "skills/math-research-reader/assets/teaching/coordinate-alignment.tex": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.pdf": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+    "skills/math-research-reader/assets/teaching/orthogonal-projection.tex": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+    "skills/math-research-reader/LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "skills/math-research-reader/references/deep-read.md": "27e218b4f9932b40b339d5ba29432fef6e412b843d5684169b7a159cfad0f944",
+    "skills/math-research-reader/references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "skills/math-research-reader/references/evidence.md": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+    "skills/math-research-reader/references/examples/adjoint-walkthrough.md": "43a238f3830b8f80309c00bd80fea28c4714988e571ceee03be92b18563166bb",
+    "skills/math-research-reader/references/knowledge-base.md": "8b42a489b5ef6a5f50058841f9b847d3bfb8adce1c27a7615b93c55ccfbce751",
+    "skills/math-research-reader/references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "skills/math-research-reader/references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "skills/math-research-reader/references/mathematics.md": "2a63ce3a4c68f61b7cbb67831bf0bf972f1858a357314d588937dca5040246d1",
+    "skills/math-research-reader/references/pdf.md": "eabd8ee0946712f77bb36f8e1c9e8e5314c21c500cf14646576e09af9a9b611a",
+    "skills/math-research-reader/references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "skills/math-research-reader/references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "skills/math-research-reader/references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "skills/math-research-reader/references/proof-audit.md": "55dd39fdcec748f18dcc7cf31a361f6d401e03135a4ceded182be4751f8f41d5",
+    "skills/math-research-reader/references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "skills/math-research-reader/references/quality.md": "9f3521ff885bb154e84dd64640df72547f5900342e3c3abb280e9adf72a821af",
+    "skills/math-research-reader/references/source-reading.md": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+    "skills/math-research-reader/references/synthesis.md": "87fb7b809fcc4fad8b7bff667fcafa255ec008ccb7aecba2b11fa95595a35587",
+    "skills/math-research-reader/references/teaching-style.md": "1666a62763440ec2b72411e4fce0e02f3ee3ac0e30efcfd911dc0de46b73cbca",
+    "skills/math-research-reader/references/textbook.md": "12a82b63eb2051e3f11a48e093dec599cdbbe98efb4795be2cdc87a33c54c7c5",
+    "skills/math-research-reader/references/visualization.md": "de388e4f63bdd801d60cd97168f3b55e637e55a9b545398eb63e0630d6de1ad3",
+    "skills/math-research-reader/scripts/build_pdf.py": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+    "skills/math-research-reader/SKILL.md": "90ee03f82b12d3ba548645874ce9e90a112694a44f091ef918db779a467d5baf"
+  },
+  "publication": "No commits, pushes, tags or release changes; previous records remain historical snapshots."
+}

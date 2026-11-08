@@ -150,6 +150,159 @@ class BuildTests(unittest.TestCase):
                 pdf.build(self.args)
         self.assertEqual(output.read_bytes(), b"other writer")
 
+    def gated_run(self, pages=None, fail=False):
+        def execute(command, cwd, **options):
+            if "--to=json" in command:
+                return subprocess.CompletedProcess(command, 0, json.dumps({"blocks": [
+                    {"t": "Header", "c": [1, ["main", [], []], [{"t": "Str", "c": "正文"}]]}]}), "")
+            if command[0] == "test-pdfinfo":
+                return subprocess.CompletedProcess(command, int(fail),
+                    "unreadable" if pages is None else f"Pages: {pages}\n", "")
+            return self.compile(command, cwd, **options)
+        return execute
+
+    def test_full_read_rejects_89_pages_and_preserves_previous_output(self):
+        self.args.full_read = True
+        output = self.root / self.args.output
+        output.parent.mkdir()
+        output.write_bytes(b"previous reviewed document")
+        self.args.replace = True
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(89)):
+            with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                pdf.build(self.args)
+        self.assertEqual(output.read_bytes(), b"previous reviewed document")
+        manifest = json.loads(next((self.root / "build").glob("*/manifest.json")).read_text())
+        self.assertEqual(manifest["page_gate"]["status"], "fail")
+
+    def test_full_read_accepts_90_pages_without_certifying_visual_quality(self):
+        self.args.full_read = True
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(90)):
+            result = pdf.build(self.args)
+        manifest = json.loads(Path(result["manifest"]).read_text())
+        self.assertEqual(manifest["page_gate"]["pages"], 90)
+        self.assertEqual(result["visual_qa"], "unverified")
+
+    def test_full_read_unreadable_page_count_fails_closed(self):
+        for pages, failed in [(None, False), (90, True)]:
+            with self.subTest(pages=pages, failed=failed):
+                with patch.object(pdf, "run", side_effect=self.gated_run(pages, failed)):
+                    with self.assertRaisesRegex(pdf.BuildError, "Cannot verify"):
+                        pdf.check_full_read_pages(self.source, "test-pdfinfo", self.root)
+
+    def test_full_read_missing_pdfinfo_stops_before_compilation(self):
+        self.args.full_read = True
+        with patch.object(pdf, "executable", side_effect=pdf.BuildError("Missing executable")), \
+             patch.object(pdf, "run") as run:
+            with self.assertRaisesRegex(pdf.BuildError, "Missing executable"):
+                pdf.build(self.args)
+        run.assert_not_called()
+
+    def test_book_deep_read_mode_enables_gate_without_cli_flag(self):
+        self.args.input = None
+        self.args.book = "book.json"
+        book = {"schema_version": 1, "task_mode": "deep-read",
+                "chapters": [{"id": "main", "file": "report.md"}]}
+        (self.root / "book.json").write_text(json.dumps(book), encoding="utf-8")
+        assembled = self.root / "assembled.json"
+        assembled.write_text('{"blocks": []}', encoding="utf-8")
+        with patch.object(pdf, "assemble_book", return_value=assembled), \
+             patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(30)):
+            with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                pdf.build(self.args)
+        self.assertFalse((self.root / self.args.output).exists())
+
+    def test_invalid_book_mode_is_rejected(self):
+        (self.root / "book.json").write_text(json.dumps({"schema_version": 1,
+            "task_mode": "short-complete", "chapters": []}), encoding="utf-8")
+        with self.assertRaisesRegex(pdf.BuildError, "task_mode"):
+            pdf.load_book(self.root, "book.json")
+
+    def test_workspace_state_enforces_gate_on_plain_input_export(self):
+        (self.root / ".mrr").mkdir()
+        (self.root / ".mrr/state.json").write_text('{"mode":"deep-read"}', encoding="utf-8")
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(40)):
+            with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                pdf.build(self.args)
+        self.assertFalse((self.root / self.args.output).exists())
+
+    def test_plan_page_contract_enforces_gate_without_mode(self):
+        (self.root / ".mrr").mkdir()
+        (self.root / ".mrr/reading-plan.json").write_text(
+            '{"delivery_contract":{"minimum_teaching_pages":90}}', encoding="utf-8")
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(89)):
+            with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                pdf.build(self.args)
+
+    def test_broken_workspace_state_does_not_silently_disable_gate(self):
+        (self.root / ".mrr").mkdir()
+        (self.root / ".mrr/state.json").write_text('{broken', encoding="utf-8")
+        with patch.object(pdf, "run") as run:
+            with self.assertRaisesRegex(pdf.BuildError, "Invalid task contract"):
+                pdf.build(self.args)
+        run.assert_not_called()
+
+    def test_task_contract_change_during_build_preserves_output(self):
+        (self.root / ".mrr").mkdir()
+        state = self.root / ".mrr/state.json"
+        state.write_text('{"mode":"export"}', encoding="utf-8")
+        def changed(command, cwd, **options):
+            result = self.compile(command, cwd, **options)
+            state.write_text('{"mode":"deep-read"}', encoding="utf-8")
+            return result
+        with patch.object(pdf, "run", side_effect=changed):
+            with self.assertRaisesRegex(pdf.BuildError, "Task contract changed"):
+                pdf.build(self.args)
+        self.assertFalse((self.root / self.args.output).exists())
+
+    def test_legacy_70_71_page_contracts_inherit_current_90_page_gate(self):
+        (self.root / ".mrr").mkdir()
+        for minimum in [70, 71]:
+            (self.root / ".mrr/state.json").write_text(
+                json.dumps({"minimum_teaching_pages": minimum}), encoding="utf-8")
+            with self.subTest(minimum=minimum), \
+                 patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+                 patch.object(pdf, "run", side_effect=self.gated_run(89)):
+                with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                    pdf.build(self.args)
+
+    def test_plain_input_full_read_rejects_11_chapters_before_compilation(self):
+        self.args.full_read = True
+        def too_many(command, cwd, **options):
+            self.assertIn("--to=json", command)
+            return subprocess.CompletedProcess(command, 0, json.dumps({"blocks": [
+                {"t": "Header", "c": [1, [str(i), [], []], []]} for i in range(11)]}), "")
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=too_many):
+            with self.assertRaisesRegex(pdf.BuildError, "maximum is 10"):
+                pdf.build(self.args)
+        self.assertFalse((self.root / self.args.output).exists())
+
+    def test_first_manuscript_is_completed_before_full_read_export(self):
+        (self.root / ".mrr").mkdir()
+        state = self.root / ".mrr/state.json"
+        for status in ("planned", "composing"):
+            state.write_text(json.dumps({"mode": "deep-read", "first_manuscript_status": status}), encoding="utf-8")
+            with self.subTest(status=status), patch.object(pdf, "run") as run, \
+                 patch.object(pdf, "diagnose") as diagnose:
+                with self.assertRaisesRegex(pdf.BuildError, "first full teaching manuscript"):
+                    pdf.build(self.args)
+                run.assert_not_called()
+                diagnose.assert_not_called()
+
+    def test_ready_first_manuscript_still_has_to_pass_actual_page_gate(self):
+        (self.root / ".mrr").mkdir()
+        (self.root / ".mrr/state.json").write_text(json.dumps({"mode": "deep-read",
+            "first_manuscript_status": "content-reviewed"}), encoding="utf-8")
+        with patch.object(pdf, "executable", return_value="test-pdfinfo"), \
+             patch.object(pdf, "run", side_effect=self.gated_run(89)):
+            with self.assertRaisesRegex(pdf.BuildError, "requires at least 90"):
+                pdf.build(self.args)
+
 
 if __name__ == "__main__":
     unittest.main()

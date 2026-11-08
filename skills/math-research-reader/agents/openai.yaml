@@ -1,6 +1,6 @@
 interface:
   display_name: "MathResearchReader"
-  short_description: "数学论文教科书级精读、完整推导与证明审查，支持分章知识库与长篇中文 PDF"
-  default_prompt: "使用 $math-research-reader 对我提供的论文执行完整教科书级精读，按数学依赖由浅入深重组讲解，自然引入变量并展开推导与证明，建立 Markdown 知识库，生成不含阅读导航、练习解答和研究启发的中文 PDF。"
+  short_description: "导师式百页数学精读：有效正文至少90页、全书至多十章，充分证明与几何矢量图"
+  default_prompt: "使用 $math-research-reader，先设计至多十章的完整专题课程，再以资深导师授课细度直接写成百页级精读教材：有效正文至少90页，充分讲解、证明、算例与通式，图解机会都实际绘制，可有几十幅以上矢量图；不先做短版再凑页，并复用未变来源与检查。"
 policy:
   allow_implicit_invocation: true

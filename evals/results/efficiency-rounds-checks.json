@@ -1,0 +1,192 @@
+{
+  "date": "2026-11-08",
+  "scope": "Three review rounds of current worktree; no new full-paper PDF, actual billing experiment or global optimum proof.",
+  "rounds": [
+    {
+      "round": 1,
+      "action": "Consolidate duplicate textbook planning/execution rules and knowledge-record ownership.",
+      "retained": true
+    },
+    {
+      "round": 2,
+      "action": "Try lossless raw-page packaging and compare real CLI payload.",
+      "retained": false,
+      "trial": {
+        "source": "evals/results/textbook-sample.pdf",
+        "pages": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "payload_utf8_bytes_excluding_cli_newline": {
+          "json": 7816,
+          "text": 7783,
+          "auto": 7783
+        },
+        "all_page_characters_preserved": true,
+        "auto_not_larger_than_json": true,
+        "source_unchanged": true,
+        "scope": "Lossless text packaging only; not token billing, account quota or textbook quality.",
+        "retained": false,
+        "reason": "Only 33 UTF-8 bytes saved in the public five-page case; net benefit of new interface and instructions not established. Removed the experiment and restored existing CLI."
+      }
+    },
+    {
+      "round": 3,
+      "action": "Route resumption to only the recovery section; consult creation schema only when needed. Reuse existing math/teaching review instead of adding review passes.",
+      "retained": true
+    }
+  ],
+  "instruction_changes": {
+    "files": {
+      "SKILL.md": {
+        "before_chars": 2031,
+        "after_chars": 2076,
+        "before_sha256": "760c231b90c2191478fd61d3dae7845386a20aba032a73acbee037747f454368",
+        "after_sha256": "8d0d6a86b90e0ae521fa795de9183a2e982bdf2bb52654eb7fe770e39ed3a44e"
+      },
+      "references/knowledge-base.md": {
+        "before_chars": 4121,
+        "after_chars": 3922,
+        "before_sha256": "4edfe5b06e9173fe09600abae57b69cc7e55e642e848f1349e05a84af02e9da8",
+        "after_sha256": "dbe1119bbd086a7ead8f6438046672947b254f40b6f5d822096629a212c83855"
+      },
+      "references/synthesis.md": {
+        "before_chars": 3016,
+        "after_chars": 2711,
+        "before_sha256": "9e1bd227dbf6057ee5565e25a82661750c4e8864c6a2def98cd6a5b01e87f18a",
+        "after_sha256": "fbdc1760f60a5a888bbc2f0449f0030b4dc855f04d52004d05e3aa9b07825000"
+      },
+      "references/textbook.md": {
+        "before_chars": 5803,
+        "after_chars": 4555,
+        "before_sha256": "a69df5816fa8c7e4c275544c86867486aec2cb12392000116c650ad36109c273",
+        "after_sha256": "21d2665c7c452c5b95d42c1a6e239406b5df2997c1e035764d2bca45cd937a16"
+      }
+    },
+    "changed_files_before_chars": 14971,
+    "changed_files_after_chars": 13264,
+    "all_skill_markdown_before_chars": 58078,
+    "all_skill_markdown_after_chars": 56371,
+    "recovery_section_chars": 400,
+    "previous_entire_knowledge_base_chars": 4121,
+    "actual_context_loading_or_account_usage_measured": false
+  },
+  "critical_files_unchanged": [
+    "references/delivery-contract.md",
+    "references/mathematics.md",
+    "references/visualization.md",
+    "references/quality.md",
+    "scripts/build_pdf.py",
+    "scripts/reading_cache.py",
+    "assets/pdf-header.tex"
+  ],
+  "contract": {
+    "minimum_effective_teaching_pages": 90,
+    "maximum_visible_main_chapters": 10,
+    "complete_first_teaching_manuscript_before_export": true,
+    "proofs_variables_figures_and_all_page_QA_preserved": true,
+    "basis": "Unchanged canonical requirements, scripts and PDF template; manual review of edited workflow references."
+  },
+  "unit_tests": {
+    "command": "python -B -X utf8 -m unittest discover -s tests -q",
+    "total": 56,
+    "passed": 55,
+    "skipped": 1,
+    "failed": 0,
+    "skip_reason": "OS does not allow test symlinks",
+    "test_harness_fix": "Rename the mock extraction failure flag to avoid shadowing unittest.TestCase.fail."
+  },
+  "official_quick_validate": {
+    "source": {
+      "returncode": 0,
+      "output": "Skill is valid!"
+    },
+    "installed": {
+      "returncode": 0,
+      "output": "Skill is valid!"
+    }
+  },
+  "relative_file_links": {
+    "links_checked": 91,
+    "missing": 0,
+    "new_recovery_creation_and_evaluation_headings_verified": true,
+    "all_other_anchor_semantics": "not fully validated"
+  },
+  "yaml": "parsed; existing invocation and implicit policy retained",
+  "installed_package": {
+    "kind": "junction to project source",
+    "matching_files": 35,
+    "all_hashes_match": true
+  },
+  "git_diff_check": {
+    "returncode": 0
+  },
+  "stopping_basis": {
+    "reviewed": [
+      "instruction duplication and routes",
+      "source cache/locate/read output",
+      "checkpoint and daily resumption",
+      "figure data/style reuse",
+      "unit and final review/compilation triggers"
+    ],
+    "remaining_verified_safe_items": [],
+    "declined": [
+      "Unmeasured new wrapper/API complexity",
+      "Weaker or shorter teaching content, proofs, diagrams or QA",
+      "Removing meaningful verification provenance",
+      "Caching final PDF without a complete dependency/QA fingerprint",
+      "Changing model or reasoning settings"
+    ],
+    "global_minimum_proven": false
+  },
+  "limitations": [
+    "No measured account quota or guaranteed saving percentage.",
+    "No new full-book A/B experiment or independent learner study.",
+    "Rule/hash preservation and tests do not guarantee identical stochastic model output."
+  ],
+  "package_sha256": {
+    "agents/openai.yaml": "d57873c2dbcbb3db91209d3e6c255f1b014f41d559f372adcfc8d5bc9beabf2a",
+    "assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "assets/teaching/aligned-errors.pdf": "d4dee933c7fc78781f2c04ead979d3b6add781cd9f04e793e87c2e9445a3e2b8",
+    "assets/teaching/aligned-errors.tex": "e28e7454f52701df44c6cccb98cfda2c9ad0180e21289e828568afe7454f0a13",
+    "assets/teaching/complex-adjoint.pdf": "5e7b6fc6f8a13189ef04ebb8adbfb54f82f45e58b648b5376fdec61d3a8c4c3f",
+    "assets/teaching/complex-adjoint.tex": "9e06bd43c38ed6067d60699ec5a1b7846bb68d3d5428321a9e2722c6e8e9cabc",
+    "assets/teaching/coordinate-alignment.pdf": "e1f564d3338ec872763cf70f23baf12f8281b987f375d121e09ef3f527498042",
+    "assets/teaching/coordinate-alignment.tex": "edd40901de5668c1b523feddc3bcd82fa89aab4e7b542833d7b727a80be5af5c",
+    "assets/teaching/orthogonal-projection.pdf": "c3e90eaf53dea3a7a6409d689e2f84a9fcba431625c52b4a7683816a9b092d97",
+    "assets/teaching/orthogonal-projection.tex": "c7af68f751c090c5f87bd4e681af7c4498af1007257da2d9a0dc5964fc3efa6a",
+    "LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "references/deep-read.md": "8b4726cb44af38e7d827a0721beed366291187db171c84666a8733ee4a173df8",
+    "references/delivery-contract.md": "fad1a105c1f047764f310ad4e26a48ed4259059e9a7fff85473e95a1096a8969",
+    "references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "references/evidence.md": "c3d6f4b6145c9a2373d6a496b300ef6e57466077e9142152d05bfa9349a14eb4",
+    "references/examples/adjoint-walkthrough.md": "8fbb2e59b32081c0d4939c53b45a7a03ba10b3985807202d2aca2982d39bb83c",
+    "references/knowledge-base.md": "dbe1119bbd086a7ead8f6438046672947b254f40b6f5d822096629a212c83855",
+    "references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "references/mathematics.md": "dedcdfc36db8c1ea99b73b59d2541140b9b103017412069fc68de760b3b0e721",
+    "references/pdf.md": "f8278f15a60ca3f307cd35d141cf1ec489892dcc43afd863cc1a3dca2e675c49",
+    "references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "references/proof-audit.md": "c1f93ddfd533587bcb3d5b524eb96148970eddb9f0961648a9183a03214dceb7",
+    "references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "references/quality.md": "7e059a1ff1c69378423317fd44ce2b283773b613d99d41075fd04dcf2215afdd",
+    "references/source-reading.md": "591a0ff53acf4024c24221148011ab9eba809cd079973ff2ad3d13a7b1d5725f",
+    "references/synthesis.md": "fbdc1760f60a5a888bbc2f0449f0030b4dc855f04d52004d05e3aa9b07825000",
+    "references/teaching-style.md": "bf841cc4f902a44fc27e48e89b09fc33df0ce420c69870e388d2352a44601c9f",
+    "references/textbook.md": "21d2665c7c452c5b95d42c1a6e239406b5df2997c1e035764d2bca45cd937a16",
+    "references/visualization.md": "07ec371d1603c090d1a7021d68ca7c763c2a7615ea05f4c734b2245441aa1817",
+    "scripts/build_pdf.py": "e6ba2b4f108749ddc6e90741fa26a489d214a9f4c846d1841d48958ddec8422e",
+    "scripts/reading_cache.py": "c0631aaa9216a60759c37665164dbde3f45a2698ac207d3dd1fdccf2e3af83f8",
+    "SKILL.md": "8d0d6a86b90e0ae521fa795de9183a2e982bdf2bb52654eb7fe770e39ed3a44e"
+  },
+  "test_sha256": {
+    "tests/test_book.py": "070e48c7906ca11451d0f61c976aeb4d5ed180bcb7e03d69cbea81b720a723e8",
+    "tests/test_build_pdf.py": "d7c7892942c47bcd03d50895c28526c75d45e50760efb3f6837de981d505712a",
+    "tests/test_reading_cache.py": "3f9152243baac5172343f7ea4c5170152fabac4725c6e34dd08c9f85c3fbc2db"
+  }
+}

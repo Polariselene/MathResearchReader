@@ -2,6 +2,17 @@
 
 Markdown 是唯一数学内容源；PDF 从声明顺序的 Markdown 自动生成，不能另外撰写一份。
 脚本只构建，不替代数学核验或视觉QA。完整精读需PDF；专项审查仅明确要求时导出。
+完整精读按[交付契约](delivery-contract.md)至少90页有效教学正文。
+命令传`--full-read`，book.json写`task_mode=deep-read`；任一方式都会启用至少90个物理页的发布门槛。
+构建器也读取`.mrr/state.json`与`.mrr/reading-plan.json`；其中`mode/task_mode=deep-read`或
+`minimum_teaching_pages>=90`（可在delivery_contract内）会继承相同门槛；旧70/71页契约也继承当前90页要求。
+state中`first_manuscript_status=planned/composing`会在整书编译前被阻止，正文及必要图示完成内容审阅后才设`content-reviewed`。
+此状态不是质量认证，90页计数、至多10章及完整内容/版面验收仍需通过。
+内部小型样张只在隔离目录验证字体、长公式和图形风格，不包含一份缩略整书，不作为估算还缺多少页的循环。
+完整任务不能通过省略标志、换输出文件名或改用`--input`绕过；状态损坏须先修复，构建期间状态改变也停止发布。
+独立专项/短导出使用独立任务工作区，不抹去全文任务契约。
+另需Poppler `pdfinfo`，不在PATH时传`--pdfinfo <实际可执行文件>`；无法计数或不足时不替换最终文件。
+门槛只核物理页数，有效正文和排版仍单独检查；普通export和专项不受此门槛影响。
 
 ## 环境与构建
 
@@ -30,7 +41,9 @@ python scripts/build_pdf.py --root <论文工作区> --input report.md --input a
 ## 图与链接
 
 原图标来源，自绘标教学示意。PDF嵌入PNG/JPEG/PDF等已确认格式；SVG/Mermaid先转换。
-数学图用矢量或高分辨率。跨Markdown的链接如 audit.md#finding-1，在合并前的build派生副本
+自绘数学教学图按[可视化规则](visualization.md)保留矢量，原文截图可用高分辨率栅格。
+SVG/TikZ转换为PDF后检查仍为矢量；不以流程图或PNG包装替代数学拆解。
+跨Markdown的链接如 audit.md#finding-1，在合并前的build派生副本
 改为本PDF锚点，不能修改唯一正文源；脚本不会猜测跨文件链接目标。
 跨库文件链接需明确本机可访问性，离开本机不能保证。
 
@@ -44,6 +57,7 @@ python scripts/build_pdf.py --root <论文工作区> --input report.md --input a
 ```json
 {
   "schema_version": 1,
+  "task_mode": "deep-read",
   "title": "论文教科书级精读",
   "author": "读者笔记",
   "lang": "zh-CN",
@@ -56,7 +70,7 @@ python scripts/build_pdf.py --root <论文工作区> --input report.md --input a
 ```
 
 ```text
-python scripts/build_pdf.py --root <论文工作区> --book book.json --output exports/book.zh-CN.pdf
+python scripts/build_pdf.py --root <论文工作区> --book book.json --full-read --output exports/book.zh-CN.pdf
 ```
 
 chapter id必须唯一且为小写字母开头的字母/数字/连字符；章节文件存在且不重复。
@@ -71,7 +85,7 @@ PDF正文不链接仅存于Markdown的导航/额外练习等文件来完成必�
 构建器不会按标题自动筛掉内容，先由写作者审查清单和正文边界；漏收数学依赖或误收附属材料
 都须修正后再构建，不靠静默忽略缺失链接通过验收。--input也先审查实际收录范围。
 
-没有章节数/页数配额。长篇先逐章验收，再合并做整书检查；构建成功和百页输出都不证明
+完整精读至多10个可见主章，无页数上限，有90页有效正文下限。长篇先逐单元充分写作并验收，再合并做整书检查；构建成功和百页输出都不证明
 教学深度或数学正确。--input保持原有轻量路线；需要自动章间链接时选--book。
 复杂长篇可用--timeout调整单次编译时限（默认600秒，范围1–3600），超时保留失败记录，
 不将其转化为削减数学正文的理由。
@@ -79,6 +93,10 @@ PDF正文不链接仅存于Markdown的导航/额外练习等文件来完成必�
 保留用户/其他写入者的版本，防止把旧检查绑定到新内容。
 
 ## 每次导出检查
+
+默认先完成正文，只做一次小型版式样张和最终整书构建；不为每个章节编译阶段稿。
+最终仍逐页查看，可批量渲染接触表后放大密集/可疑页；所有页均要实际看，不能只看抽样。
+修复后比较实际渲染与内容变化，只复查改变的页面及相关链接/页码，不因一个局部修改无故重复整书视觉输入。
 
 先核实际PDF不存在被移出的阅读说明、练习解答或研究启发（也不能改名藏入附录），
 必要教学内容未丢、正文章号连续。再检查日志及所有渲染页：中文乱码/缺字；公式完整；上下标/分数/矩阵；图片；表格溢出；

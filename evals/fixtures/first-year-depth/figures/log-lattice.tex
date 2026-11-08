@@ -1,0 +1,17 @@
+% Original teaching figure: cyclic subgroup only, not a general unit-lattice theorem.
+\documentclass[tikz,border=3mm]{standalone}
+\begin{document}
+\begin{tikzpicture}[>=stealth,font=\small,x=.85cm,y=.85cm]
+\draw[->] (-3.7,0)--(3.7,0) node[right] {$\ell_+$};
+\draw[->] (0,-3.7)--(0,3.7) node[above] {$\ell_-$};
+\draw[gray] (-3.4,3.4)--(3.4,-3.4);
+\foreach \k in {-2,-1,0,1,2} {
+\fill[blue] ({-\k*1.271553},{\k*1.271553}) circle (2pt);
+\node[above right] at ({-\k*1.271553},{\k*1.271553}) {$k=\k$};
+}
+\draw[red,thick] (-3,3) circle (3pt);
+\draw[->,red,dashed,thick] (-2.95,2.95)--(-2.59,2.59);
+\node[above left,red] at (-3,3) {$(-3,3)$};
+\node[align=left] at (3,2.6) {$\alpha=\log_2(1+\sqrt2)$\\$L(k)=(-k\alpha,k\alpha)$};
+\end{tikzpicture}
+\end{document}

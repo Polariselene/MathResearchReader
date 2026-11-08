@@ -1,0 +1,280 @@
+{
+  "date": "2026-11-07",
+  "scope": "Self-authored teaching unit only; no full-paper certification or independent review.",
+  "skill_structure": {
+    "validator": "official skill-creator/scripts/quick_validate.py",
+    "result": "Skill is valid!"
+  },
+  "package": {
+    "relative_links_checked": 95,
+    "yaml_short_description_characters": 40,
+    "runtime_scripts": [
+      "build_pdf.py"
+    ],
+    "all_relative_links_exist": true
+  },
+  "assembly": {
+    "math_nodes_before": 219,
+    "math_nodes_after": 219,
+    "math_sequence_preserved": true,
+    "embedded_vector_figures": 4,
+    "builder_status": "built",
+    "builder_sha256": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+    "header_sha256": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96"
+  },
+  "mathematics": {
+    "exact_ring": {
+      "t_squared": [
+        2,
+        0,
+        0,
+        0
+      ],
+      "unit_times_inverse": [
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    "worked_examples": [
+      {
+        "delta": "10",
+        "ordinary_coefficients": [
+          "5",
+          "4"
+        ],
+        "unit_coefficients": [
+          "6",
+          "3"
+        ],
+        "unit_errors": [
+          "0.0242640687119285146405066172629094235709015626130844219530",
+          "0.175735931288071485359493382737090576429098437386915578046996"
+        ],
+        "unit_error_bounds": [
+          "0.05",
+          "0.291421356237309504880168872420969807856967187537694807317668"
+        ]
+      },
+      {
+        "delta": "8",
+        "ordinary_coefficients": [
+          "4",
+          "3"
+        ],
+        "unit_coefficients": [
+          "4",
+          "3"
+        ],
+        "unit_errors": [
+          "0.03033008588991064330063327157863677946362695326635552744126",
+          "-0.030330085889910643300633271578636779463626953266355527441255"
+        ],
+        "unit_error_bounds": [
+          "0.0625",
+          "0.364276695296636881100211090526212259821208984422118509147085"
+        ]
+      }
+    ],
+    "determinant_D": "-1.00000000000000000000000000000000000000000000000000000000000",
+    "log_example": {
+      "alpha": 1.271553303163612,
+      "nearest_k": 2,
+      "sup_distance": 0.45689339367277615,
+      "proved_bound": 0.635776651581806,
+      "additional_numeric_cases": 2000
+    },
+    "scope": "Exact algebra and high-precision examples plus finite arithmetic checks; not independent proof certification or cryptosystem validation."
+  },
+  "figures": [
+    {
+      "source_asset": "evals/fixtures/first-year-depth/figures/coordinates.tex",
+      "source_sha256": "a52665bfae11b9e28bf6997f2fed3c823328d9df547be9e39e1c02a487c53f86",
+      "embedded_asset": "evals/fixtures/first-year-depth/figures/coordinates.pdf",
+      "sha256": "b8d9e1cdd1b0b479ca01939e8e235024fd63c7bf8d78f43418691e6455c62099",
+      "format": "TikZ / vector PDF",
+      "vector_verified": true,
+      "paths": 20,
+      "raster_images": 0,
+      "visual_check": "Viewed entire figure; final error-region revision viewed again."
+    },
+    {
+      "source_asset": "evals/fixtures/first-year-depth/figures/error-region.tex",
+      "source_sha256": "11ee2e2d0196005d966c379cc07fa17b621a4c37ea212484e4cdab848e066540",
+      "embedded_asset": "evals/fixtures/first-year-depth/figures/error-region.pdf",
+      "sha256": "cb4c0c6c981eedad69926dbba2a7aa3a27f45283d70dd21907d35c5a21f50e3c",
+      "format": "TikZ / vector PDF",
+      "vector_verified": true,
+      "paths": 22,
+      "raster_images": 0,
+      "visual_check": "Viewed entire figure; final error-region revision viewed again."
+    },
+    {
+      "source_asset": "evals/fixtures/first-year-depth/figures/log-lattice.tex",
+      "source_sha256": "4280a3f3a03c3702fc3af636295cf337802821dece9a8a7eac095a4bf2a31ca5",
+      "embedded_asset": "evals/fixtures/first-year-depth/figures/log-lattice.pdf",
+      "sha256": "ae75d64d8d2ba06e5b392c9a7a527095057dbced269a58b23a2a44dee0e12e61",
+      "format": "TikZ / vector PDF",
+      "vector_verified": true,
+      "paths": 14,
+      "raster_images": 0,
+      "visual_check": "Viewed entire figure; final error-region revision viewed again."
+    },
+    {
+      "source_asset": "evals/fixtures/first-year-depth/figures/rounding.tex",
+      "source_sha256": "54ad4b256051ecedc2cee2e0974528bdd07fe6c0f5817ed6fea46ddafdb35e17",
+      "embedded_asset": "evals/fixtures/first-year-depth/figures/rounding.pdf",
+      "sha256": "554a0524b7bc1ff7d2aa0814b0112fdf34f9ef41c47305dc508027f9d7b0bb96",
+      "format": "TikZ / vector PDF",
+      "vector_verified": true,
+      "paths": 43,
+      "raster_images": 0,
+      "visual_check": "Viewed entire figure; final error-region revision viewed again."
+    }
+  ],
+  "pdf": {
+    "location": "Ignored local test output; not distributed as a full-paper report.",
+    "sha256": "f531ee8342b99755b539017030d76ef4398f687b42d2469928a715daa736c61a",
+    "pages": 8,
+    "raster_images": 0,
+    "visual_qa": "pass",
+    "page_checks": [
+      {
+        "page": 1,
+        "characters": 758,
+        "vector_paths": 0,
+        "raster_images": 0,
+        "figures": [],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 2,
+        "characters": 1131,
+        "vector_paths": 10,
+        "raster_images": 0,
+        "figures": [],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 3,
+        "characters": 887,
+        "vector_paths": 35,
+        "raster_images": 0,
+        "figures": [
+          "图1: 教学示意图：仅画二维子代数𝑇。蓝、红向量分别是1, 𝑡的坐标像，黑点是消息𝑚。"
+        ],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 4,
+        "characters": 888,
+        "vector_paths": 14,
+        "raster_images": 0,
+        "figures": [
+          "图2 把两次舍入放在各自的系数平面中，格点都是整数系数，空心点为取整前的实系数。两幅图"
+        ],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 5,
+        "characters": 1003,
+        "vector_paths": 63,
+        "raster_images": 0,
+        "figures": [
+          "图2: 教学示意图：左侧普通舍入，右侧先乘𝑢−1 的舍入。灰线为半整数单元边界，虚箭头连接实"
+        ],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 6,
+        "characters": 1051,
+        "vector_paths": 43,
+        "raster_images": 0,
+        "figures": [
+          "图3 画的不是某个随机分布，而是所有允许残差形成的可行域。系数方形[−1/2, 1/2]2 经𝐴变成槽",
+          "图3: 教学示意图：左为𝐴[−1/2, 1/2]2，右为𝐷𝐴[−1/2, 1/2]2；两面板坐标尺度相同。横向收缩伴随"
+        ],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 7,
+        "characters": 892,
+        "vector_paths": 7,
+        "raster_images": 0,
+        "figures": [],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      },
+      {
+        "page": 8,
+        "characters": 324,
+        "vector_paths": 15,
+        "raster_images": 0,
+        "figures": [
+          "图4: 教学示意图：单位幂产生零和直线上的离散点；红色目标不一定是可达到的单位对数。虚线"
+        ],
+        "visual_status": "pass",
+        "method": "Rendered at 1.05x and viewed the entire page; all four diagram assets also inspected separately."
+      }
+    ]
+  },
+  "review": {
+    "type": "same-context self-review",
+    "teaching_coverage": [
+      "quotient representatives and multiplication",
+      "dimensions and coordinate inverse",
+      "ordinary and unit rounding with worked states",
+      "general error identity and deterministic bounds",
+      "counterexample to strict per-input improvement",
+      "one-dimensional logarithmic covering proof"
+    ],
+    "full_paper_revalidation": false,
+    "hundred_page_book_validation": false,
+    "reader_study": false
+  },
+  "reviewed_files": {
+    "skills/math-research-reader/agents/openai.yaml": "36607b1744ea2d5238550fa010dbf110940c91e7110c3e792abe59731e8e113e",
+    "skills/math-research-reader/assets/pdf-header.tex": "d4d43c6f1f0d1741ee5c2e6c2570a4d35e385e5a00bab8c2bf8217c05851ee96",
+    "skills/math-research-reader/LICENSE": "785078ca4c6d5381ed8c0fb2b50490dd109bcd81326f660379364b8ff48f0191",
+    "skills/math-research-reader/references/deep-read.md": "27e218b4f9932b40b339d5ba29432fef6e412b843d5684169b7a159cfad0f944",
+    "skills/math-research-reader/references/design-provenance.md": "c9d987ed42a61c124eb3ab5605972a1f514734153f0cb52aec362d166054e23f",
+    "skills/math-research-reader/references/evidence.md": "a2b5e5f72aefd00594c1a3e9834212385bdd61fe5c86b9d0f10867c87c4147f4",
+    "skills/math-research-reader/references/knowledge-base.md": "fc69034f424b0b92e7713f84d41b50a8fdd0e6a338eb3d740a242112337a3171",
+    "skills/math-research-reader/references/lean.md": "ca5c3a53e5824458ef65a10b7abf8e3a156978742e9e47f496b0cd4cc4011bda",
+    "skills/math-research-reader/references/literature.md": "ececd937676b16f836260135d464dec6fa3b957cfcae6de51db6f2b7537ee689",
+    "skills/math-research-reader/references/mathematics.md": "e8a8e96370a3c1a2f2e7aba34d6da04cbee364d5bb708dd4b60c0dace5b28d24",
+    "skills/math-research-reader/references/pdf.md": "eabd8ee0946712f77bb36f8e1c9e8e5314c21c500cf14646576e09af9a9b611a",
+    "skills/math-research-reader/references/profiles/applied-security.md": "a911e06a27b77457b0fcd51c14c693dea0e2b9155a08dc6707bca1972226cfd3",
+    "skills/math-research-reader/references/profiles/empirical-cs-ai.md": "db50daa764fef03c0ccba457a31eaa05a8610519051398b9a36327150550ec27",
+    "skills/math-research-reader/references/profiles/pure-math.md": "1658534d5f991e9136a47259b2d30ec447fcd6f42e84be7fe24157feb5743261",
+    "skills/math-research-reader/references/proof-audit.md": "55dd39fdcec748f18dcc7cf31a361f6d401e03135a4ceded182be4751f8f41d5",
+    "skills/math-research-reader/references/proof-obligations.md": "5ba9e0cd33aaba571778410ff933fe9c297b5353cd35ac288cccbe260ecdc0a7",
+    "skills/math-research-reader/references/quality.md": "ba3a0c7f731c444ca7c554132352baffc005fef963250441d42a77ee7269c6d8",
+    "skills/math-research-reader/references/source-reading.md": "02bdd75fc525dae4b3dde7af52edccaf9a7011d501300460076f4fdc0cb09fbb",
+    "skills/math-research-reader/references/synthesis.md": "aa4dc5be0312ffcb84c78339f3c261ec136b86dab900828d10465b3372ad61dc",
+    "skills/math-research-reader/references/textbook.md": "c8f26660f079b8f8e5bd404e163af11f9be2ea4ef1061cc3b7469d13038e2dc2",
+    "skills/math-research-reader/references/visualization.md": "7830b22c8e00d90ccbb18b81596d7142a9103744efe13be05d7cf85b860cd17d",
+    "skills/math-research-reader/scripts/build_pdf.py": "95a7e783f329f889690e56105206afd568ed50d1fae8c6ff958a27b15e739ba3",
+    "skills/math-research-reader/SKILL.md": "c11a7b11d853dbe2dd431c29e4f7df387f25d636d2786f1ad587698f2ff5f81b"
+  },
+  "fixture_files": {
+    "evals/fixtures/first-year-depth/book.json": "a14bf44890b74baa86b2a2702e7e9f53c6b15cf5a5f9f858f67917b102d54697",
+    "evals/fixtures/first-year-depth/figures/coordinates.pdf": "b8d9e1cdd1b0b479ca01939e8e235024fd63c7bf8d78f43418691e6455c62099",
+    "evals/fixtures/first-year-depth/figures/coordinates.tex": "a52665bfae11b9e28bf6997f2fed3c823328d9df547be9e39e1c02a487c53f86",
+    "evals/fixtures/first-year-depth/figures/error-region.pdf": "cb4c0c6c981eedad69926dbba2a7aa3a27f45283d70dd21907d35c5a21f50e3c",
+    "evals/fixtures/first-year-depth/figures/error-region.tex": "11ee2e2d0196005d966c379cc07fa17b621a4c37ea212484e4cdab848e066540",
+    "evals/fixtures/first-year-depth/figures/log-lattice.pdf": "ae75d64d8d2ba06e5b392c9a7a527095057dbced269a58b23a2a44dee0e12e61",
+    "evals/fixtures/first-year-depth/figures/log-lattice.tex": "4280a3f3a03c3702fc3af636295cf337802821dece9a8a7eac095a4bf2a31ca5",
+    "evals/fixtures/first-year-depth/figures/rounding.pdf": "554a0524b7bc1ff7d2aa0814b0112fdf34f9ef41c47305dc508027f9d7b0bb96",
+    "evals/fixtures/first-year-depth/figures/rounding.tex": "54ad4b256051ecedc2cee2e0974528bdd07fe6c0f5817ed6fea46ddafdb35e17",
+    "evals/fixtures/first-year-depth/lesson.md": "e1635beea77768728b804e40675c8ec2c90ac3edf181fcda0e56cabd25599d08"
+  },
+  "git_operations": "No commit, push, tag, or release changes."
+}
