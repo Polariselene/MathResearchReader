@@ -1,26 +1,24 @@
-# MathResearchReader v0.2.0
+# MathResearchReader v0.3.0
 
-面向专题初学者的导师式教科书精读更新。本版本为早期预发布。
+问题链教学、正文回写与重复开销约束更新，作为早期Pre-release发布。
 
 ## 本次改动
 
-- 完整精读按完整课程首次展开：有效教学正文至少90页、可见主章至多10章；加强连续讲授、变量说明、逐步证明、算例与通式的衔接及数学矢量图。
-- 完善构建门槛：继承工作区全文任务，核实际PDF页数和Pandoc章结构；首次稿尚在计划/写作阶段时停止整书导出。脚本只核物理页数与结构，有效教学正文和教学质量仍需内容检查。
-- 新增本地PDF文字缓存、完整取页、单词及批量定位；检测源/提取器改变和缓存损坏。减少重复规则、取文、检索与编译，按活动单元恢复阅读。
-- 增加原创教学示范、可编辑TikZ源与矢量PDF；补充公开材料边界及回归验证记录。
-
-升级提示：完整精读工作区的旧70/71页契约现在继承90页门槛，不能通过遗漏标志或换输出名规避；独立专项审查和普通短文导出仍按实际范围执行。
+- 主章及核心单元由driving_question驱动，明确自然尝试、失败点、论文方法、效果和剩余缺口；新增八项必写动作、讲解降级及问题链自检。
+- 有效正文优先承重推导，弱相关先修证明不计页；保留至少90页、至多10章、首次完整教材成稿的要求。
+- 交付前先核债务登记完整性，再按问答锚点取片段、原位回写正文；未清零不得标记内容已审阅或完整交付。
+- 统一context_ledger及14项开销约束，合并重复检查与记账；保留必要证据取回、全部页实际目视及必要修复复检。
+- 排除本地reading-work目录并更新使用说明；既有PDF缓存、构建脚本和调用方式不变。
 
 ## 安装与使用
 
-按[README](https://github.com/Polariselene/MathResearchReader/blob/v0.2.0/README.md)安装完整的`skills/math-research-reader/`目录，使用`$math-research-reader`发起精读、专项审查或继续阅读。
-PDF构建需要现有Python、Pandoc、XeLaTeX等依赖；文字缓存另需Poppler pdftotext，项目不自动安装。
+按[README](https://github.com/Polariselene/MathResearchReader/blob/v0.3.0/README.md)安装完整的skills/math-research-reader目录，使用`$math-research-reader`发起精读、审查或恢复。
+原有Python/Pandoc/XeLaTeX/Poppler依赖不变，不自动安装工具。
 
 ## 验证与限制
 
 - 56项单测：55通过，1项因Windows符号链接权限跳过；官方Skill校验通过。
-- 90页与十章是本版本的完整精读要求，尚未重新验收符合全部最新要求的百页教材或独立读者学习效果。
-- 不认证数学正确性，不提供实际额度节省比例；OCR、Lean工具链和跨平台全面兼容性尚未验证或未捆绑。
-- MIT仅覆盖本项目有权授权的内容；原创图示、嵌入字体与外部资料边界见[THIRD_PARTY.md](https://github.com/Polariselene/MathResearchReader/blob/v0.2.0/THIRD_PARTY.md)。
+- 本次主要是执行规则更新，没有新增自动台账、债务判定或用量监控程序；没有新教材对照实验或账户token测量，不承诺固定省额比例或教学效果。
+- 跨平台与复杂OCR/TeX兼容性尚未全面验证，不认证数学正确性。MIT及第三方边界见[THIRD_PARTY.md](https://github.com/Polariselene/MathResearchReader/blob/v0.3.0/THIRD_PARTY.md)。
 
-保留v0.1.0，不覆盖旧标签；不附带私人论文、运行环境或额外附件。
+保留v0.1.0和v0.2.0，不覆盖旧标签；不附私人论文、阅读产物、依赖环境或额外附件。

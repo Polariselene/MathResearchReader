@@ -3,6 +3,7 @@
 __pycache__/
 *.py[cod]
 MathResearchReader-Library/
+/reading-work/
 *.aux
 *.log
 *.toc
