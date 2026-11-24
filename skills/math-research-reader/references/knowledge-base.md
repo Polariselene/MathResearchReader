@@ -90,8 +90,9 @@ reopened / needs-reader-feedback / partially-understood-reader-report，
 已回写且正文/依据哈希未变可复用；不能用qa目录存在本身制造永久债务。待回写者必须：
 
 1. 用债务的locations映射到具体chapters/*.md插入锚点；单文件正文映射到实际对应段落。
-2. 在原位置重写，把问答已讲透的内容融入唯一正文；不在书末加补课章，
-   不只更新qa/、聊天或状态字段。
+2. 将问答已讲透的内容写回唯一正文。首选原位重写为推理的一步，或把补充反例和限制收进该单元末尾的边界段，且不另立小节。
+   确属其他 `driving_question` 的内容归入对应章节。缺少合适归属时，可集中放在本章末尾的「补充问答」块，明确标为旁支。
+   主线依赖的解释须在用到时补齐。补充块不替代正文回写，qa/、聊天和状态字段也不能作为已回写依据。
 3. 据实际回写清零债务或如实保留剩余，把受影响teaching_self_review置为失效后，
    合并执行[问题链自检](quality.md#问题链自检与陈述式解释)，不另加一轮审阅。
 4. 债务未清零，quality.depth记fail，禁止标first_manuscript_status=content-reviewed及完整交付。

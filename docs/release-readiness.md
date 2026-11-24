@@ -1,6 +1,6 @@
 # 发布前清理与检查
 
-当前待发布版本v0.3.0见[v0.3.0发布检查](releases/v0.3.0-readiness.md)；[v0.2.0检查](releases/v0.2.0-readiness.md)保留历史范围。
+当前版本的改动见[发布说明](../release-notes.md)。历史检查见[v0.3.0](releases/v0.3.0-readiness.md)和[v0.2.0](releases/v0.2.0-readiness.md)。
 下文是2026-11-06、v0.1.0之前的历史记录；91个文件、4个PDF和“没有Git历史”等描述不适用于当前工作区。
 
 2026-11-06。本轮只修复工作目录，没有执行Git命令、初始化、暂存、提交或上传。
